@@ -8,21 +8,22 @@ import { tap } from "rxjs/operators"
   providedIn: 'root'
 })
 export class AuthService {
-
   private token: string | null = null
 
   constructor(private http: HttpClient) {}
 
   register(user: User): Observable<User> {
-    return this.http.post<User>('/api/auth/register', user)
+    // return this.http.post<User>('/api/auth/register', user)
+    return this.http.post<User>('http://localhost:3000/register', user)
   }
 
-  login(user: User): Observable<{ token: string }> {
-    return this.http.post<{ token: string }>('/api/auth/login', user)
+  login(user: User): Observable<{ accessToken: string }> {
+    // return this.http.post<{ token: string }>('/api/auth/login', user)
+    return this.http.post<{ accessToken: string }>('http://localhost:3000/login', user)
       .pipe(
-        tap(({token}) => {
-          localStorage.setItem('auth-token', token)
-          this.setToken(token)
+        tap(({accessToken}) => {
+          localStorage.setItem('token', accessToken)
+          this.setToken(accessToken)
         })
       )
   }
