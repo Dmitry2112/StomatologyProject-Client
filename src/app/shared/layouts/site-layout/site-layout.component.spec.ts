@@ -3,21 +3,21 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SiteLayoutComponent } from './site-layout.component';
 
 describe('SiteLayoutComponent', () => {
-  let component: SiteLayoutComponent;
-  let fixture: ComponentFixture<SiteLayoutComponent>;
+    let component: SiteLayoutComponent;
+    let fixture: ComponentFixture<SiteLayoutComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ SiteLayoutComponent ]
-    })
-    .compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [ SiteLayoutComponent ]
+        })
+            .compileComponents();
 
-    fixture = TestBed.createComponent(SiteLayoutComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(SiteLayoutComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });
