@@ -1,0 +1,32 @@
+.header {
+    height: 82px;
+    width: 100%;
+    padding: 0 44px;
+    border-bottom: 1px solid #D9D9D9;
+    background: white;
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 895px) {
+    .header {
+        height: 53px;
+        width: 100%;
+        padding: 8px;
+        background: white;
+
+        &__content {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

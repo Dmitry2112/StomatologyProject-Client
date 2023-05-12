@@ -16,28 +16,29 @@ export class AuthService {
 
     public register(user: IAuthUserRequestModel): Observable<IAuthUserResponseModel> {
         return this._http.post<IAuthUserResponseModel>('http://localhost:3000/register', user)
-                   .pipe(
-                       tap((response) => {
-                           this.setToken(response.accessToken);
-                       })
-                   );
+            .pipe(
+                tap((response: IAuthUserResponseModel) => {
+                    this.setToken(response.accessToken);
+                })
+            );
     }
 
     public login(user: IAuthUserRequestModel): Observable<IAuthUserResponseModel> {
         return this._http.post<IAuthUserResponseModel>('http://localhost:3000/login', user)
-                   .pipe(
-                       tap((response) => {
-                           this.setToken(response.accessToken);
-                       })
-                   );
+            .pipe(
+                tap((response: IAuthUserResponseModel) => {
+                    this.setToken(response.accessToken);
+                })
+            );
     }
 
+    //TODO: В burger-button сделать кнопку "выйти", она будет использовать эту функцию
     public logout(): void {
         this.removeToken();
     }
 
     public isAuthenticated(): boolean {
-        return !!this._token && !!localStorage.getItem('token');
+        return !!this._token || !!localStorage.getItem('token');
     }
 
     private setToken(token: string): void {
@@ -50,6 +51,7 @@ export class AuthService {
         this._token = undefined;
     }
 
+    //TODO: использовать, чтобы передавать токен в запросах
     private getToken(): string | undefined {
         return this._token;
     }
