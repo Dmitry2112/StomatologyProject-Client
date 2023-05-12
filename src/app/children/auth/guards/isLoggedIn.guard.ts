@@ -6,13 +6,13 @@ import {
 import { AuthService } from '../data/services/auth.service';
 
 
-export const authGuard: CanActivateFn = () => {
+export const isLoggedInGuard: CanActivateFn = () => {
     const authService: AuthService = inject(AuthService);
     const router: Router = inject(Router);
 
-    if (!authService.isAuthenticated()) {
-        router.navigate(['/auth/login']);
+    if (authService.isAuthenticated()) {
+        router.navigate(['/cabinet']);
     }
 
-    return authService.isAuthenticated();
+    return !authService.isAuthenticated();
 };

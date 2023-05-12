@@ -1,0 +1,49 @@
+<form
+    class="register-form"
+    [formGroup]="registerForm"
+    (ngSubmit)="onSubmit()"
+>
+    <div class="register-form__content">
+        <span class="register-form__title">Регистрация</span>
+        <div class="register-form-field">
+            <validation-message [control]="registerForm.controls.email">
+            </validation-message>
+            <input
+                class="register-form-field__input"
+                id="email"
+                type="email"
+                formControlName="email"
+                placeholder="Логин"
+            >
+        </div>
+        <div class="register-form-field">
+            <validation-message [control]="registerForm.controls.password">
+            </validation-message>
+            <input
+                class="register-form-field__input"
+                id="password"
+                type="password"
+                formControlName="password"
+                placeholder="Пароль"
+            >
+        </div>
+    </div>
+    <div class="register-form-action">
+        <button
+            class="register-form-action__button"
+            type="submit"
+        >
+            Регистрация
+        </button>
+    </div>
+    <div class="register-form-nav">
+        <a
+            class="register-form-nav__item"
+            routerLink="/auth/login"
+            routerLinkActive="card-nav__item_active"
+        >
+            Войти
+        </a>
+    </div>
+</form>
+

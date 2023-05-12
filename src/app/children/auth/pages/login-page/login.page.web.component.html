@@ -1,0 +1,49 @@
+<form
+    class="login-form"
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+>
+    <div class="login-form__content">
+        <span class="login-form__title">Войти в личный кабинет</span>
+        <div class="login-form-field">
+            <validation-message [control]="loginForm.controls.email">
+            </validation-message>
+            <input
+                class="login-form-field__input"
+                id="email"
+                type="email"
+                formControlName="email"
+                placeholder="Логин"
+            >
+        </div>
+        <div class="login-form-field">
+            <validation-message [control]="loginForm.controls.password">
+            </validation-message>
+            <input
+                class="login-form-field__input"
+                id="password"
+                type="password"
+                formControlName="password"
+                placeholder="Пароль"
+            >
+        </div>
+    </div>
+    <div class="login-form-action">
+        <button
+            class="login-form-action__button"
+            type="submit"
+        >
+            Вход
+        </button>
+    </div>
+    <div class="login-form-nav">
+        <a
+            class="login-form-nav__item"
+            routerLink="/auth/register"
+            routerLinkActive="card-nav__item_active"
+        >
+            Регистрация
+        </a>
+    </div>
+</form>
+
