@@ -1,13 +1,20 @@
 .login-form {
   font-family: Roboto, sans-serif;
+  margin-bottom: 30px;
 }
 .login-form__title {
-  font-size: 52px;
+  font-size: 32px;
   line-height: 60px;
   font-weight: 400;
   display: flex;
   justify-content: center;
   margin-bottom: 32px;
+}
+.login-form__content {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .login-form-field {
@@ -16,11 +23,11 @@
 }
 .login-form-field__input {
   display: block;
-  width: 500px;
-  height: 84px;
-  padding: 27px 287px 27px 25px;
+  width: 300px;
+  height: 48px;
+  padding: 10px;
   margin-bottom: 24px;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 28px;
   color: #797979;
   background-color: rgba(0, 0, 0, 0.06);
@@ -31,12 +38,12 @@
 }
 
 .login-form-action__button {
-  width: 280px;
-  height: 75px;
+  width: 173px;
+  height: 50px;
   font-size: 28px;
   line-height: 28px;
   font-weight: 500;
-  background-color: #353535;
+  background-color: #D63384;
   border-radius: 4px;
   border: none;
   color: white;
@@ -44,20 +51,7 @@
   margin: 57px auto 0;
 }
 .login-form-action__button:hover {
-  background-color: #8F8F8F;
-}
-
-.login-form-nav {
-  display: flex;
-  justify-content: center;
-  margin-top: 21px;
-}
-.login-form-nav__item {
-  color: #507CB1;
-  text-decoration: none;
-  font-size: 28px;
-  line-height: 28px;
-  font-weight: 500;
+  background-color: deeppink;
 }
 
 input.ng-touched.ng-invalid {
