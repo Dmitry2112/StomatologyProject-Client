@@ -1,8 +1,9 @@
 .footer {
     padding: 26px 0;
-    padding-left: 10%;
+    //padding-left: 10%;
     border-top: 1px solid #D9D9D9;
     display: flex;
+    justify-content: space-around;
 }
 
 .footer__left_header,
@@ -16,8 +17,11 @@
     color: #797979;
 }
 
+//.footer__left {
+//    margin-left: 24%;
+//}
 .footer__left {
-    margin-left: 24%;
+    padding: 5px;
 }
 
 .footer__left_miniheader {
@@ -40,9 +44,12 @@
 .footer__left_descr:last-child {
     margin: 0;
 }
-
+//
+//.footer__mid {
+//    margin-left: 13%;
+//}
 .footer__mid {
-    margin-left: 13%;
+    padding: 5px;
 }
 
 .footer__mid_descr {
