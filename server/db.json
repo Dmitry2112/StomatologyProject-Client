@@ -9,6 +9,11 @@
       "email": "testqeqe@qqqq",
       "password": "$2a$10$w3KDj79BZwFu4t2CTt15T.21QmzyzzXKbpTWprDTtZxUf0bsMwG4m",
       "id": 2
+    },
+    {
+      "email": "12345@12345",
+      "password": "$2a$10$VslnGa2iISAkA61uJPvLtu4V8zxcTkMbns.kc3xmhO6QLSthWoAEa",
+      "id": 3
     }
   ],
   "messages": [
