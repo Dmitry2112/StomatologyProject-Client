@@ -26,11 +26,11 @@ export class HomePageWebComponent implements OnInit {
             photo: 'patient-img.svg',
             patientCardFields: [
                 {
-                    label: 'ФИО',
+                    label: 'ФИО:',
                     data: 'Иванов Иван Иваныч'
                 },
                 {
-                    label: 'возраст',
+                    label: 'Возраст:',
                     data: '36 лет'
                 }
             ]

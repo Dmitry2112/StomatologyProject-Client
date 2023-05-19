@@ -11,4 +11,9 @@
   border-right: 1px solid #D9D9D9;
 }
 
+.header {
+  width: 100%;
+  position: fixed;
+}
+
 /*# sourceMappingURL=main-layout.component.css.map */
