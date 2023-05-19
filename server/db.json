@@ -14,11 +14,27 @@
       "email": "12345@12345",
       "password": "$2a$10$VslnGa2iISAkA61uJPvLtu4V8zxcTkMbns.kc3xmhO6QLSthWoAEa",
       "id": 3
-    }
-  ],
-  "messages": [
+    },
     {
-      "title": "adasdadad"
+        "email": "dima@rumba",
+        "password": "$2a$10$UhSx.CpvRrg0QfVFu7ONJ.QRKfsUIMO6I6NO9GdxZNnmm9ZSNCemK",
+        "id": 4,
+        "firstName": "Дмитрий",
+        "lastName": "Козаченко",
+        "patronymic": "Сергеевич",
+        "birthDate": "2002-12-21",
+        "role": "PATIENT",
+        "completedAppointments": [
+            {
+                "number": "1",
+                "nameStageTherapy": "Диагностика",
+                "dateAppointments": "2023-02-27",
+                "services": [],
+                "recommendation": "Чистите зубки"
+            }
+        ],
+        "plannedAppointment": [],
+        "photoDocuments": []
     }
   ]
 }

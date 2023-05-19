@@ -1,0 +1,44 @@
+.patient-card {
+  width: 957px;
+  padding: 50px 50px 65px;
+  position: relative;
+  background-color: white;
+  margin-bottom: 33px;
+}
+.patient-card__title {
+  font-size: 28px;
+  line-height: 34px;
+  margin-bottom: 19px;
+}
+.patient-card__content {
+  width: 857px;
+  display: flex;
+  justify-content: space-between;
+}
+.patient-card__patient-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 25px;
+  column-gap: 30px;
+}
+.patient-card__label {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+}
+.patient-card__label_not-set {
+  color: red;
+}
+.patient-card__data {
+  font-size: 20px;
+  line-height: 24px;
+}
+.patient-card__data_not-set {
+  color: red;
+}
+.patient-card__patient-photo {
+  width: 155px;
+  height: 182px;
+}
+
+/*# sourceMappingURL=patient-card.component.css.map */

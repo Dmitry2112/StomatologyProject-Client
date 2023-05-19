@@ -4,18 +4,32 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { MainHeaderComponent } from './components/main-header/main-header.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { NavigationButtonComponent } from './components/navigation-button/navigation-button.component';
+import { PlanPageWebComponent } from './pages/plan-page/plan.page.web.component';
+import { PhotodocsPageWebComponent } from './pages/photodocs-page/photodocs.page.web.component';
+import { PatientCardComponent } from './components/patient-card/patient-card.component';
+import { PatientDataService } from './data/services/patient-data.service';
 
 @NgModule({
     declarations: [
         HomePageWebComponent,
+        PlanPageWebComponent,
+        PhotodocsPageWebComponent,
         MainLayoutComponent,
-        MainHeaderComponent
+        MainHeaderComponent,
+        NavigationComponent,
+        NavigationButtonComponent,
+        PatientCardComponent
     ],
     imports: [
         CommonModule,
         RouterModule,
+
     ],
-    providers: []
+    providers: [
+        PatientDataService
+    ]
 })
 export class MainModule {
 

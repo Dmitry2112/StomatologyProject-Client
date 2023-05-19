@@ -41,6 +41,11 @@ export class AuthService {
         return !!this._token || !!localStorage.getItem('token');
     }
 
+    //TODO: использовать, чтобы передавать токен в запросах
+    public getToken(): string | undefined {
+        return this._token;
+    }
+
     private setToken(token: string): void {
         localStorage.setItem('token', token);
         this._token = token;
@@ -49,10 +54,5 @@ export class AuthService {
     private removeToken(): void {
         localStorage.removeItem('token');
         this._token = undefined;
-    }
-
-    //TODO: использовать, чтобы передавать токен в запросах
-    private getToken(): string | undefined {
-        return this._token;
     }
 }

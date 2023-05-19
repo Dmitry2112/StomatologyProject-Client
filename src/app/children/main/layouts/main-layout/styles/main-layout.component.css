@@ -1,3 +1,14 @@
+.meta-page {
+  margin-left: 320px;
+  padding: 20px 40px 25px 40px;
+}
 
+.side-bar {
+  width: 264px;
+  height: 100vh;
+  position: fixed;
+  background: white;
+  border-right: 1px solid #D9D9D9;
+}
 
 /*# sourceMappingURL=main-layout.component.css.map */

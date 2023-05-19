@@ -4,11 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthLayoutWebComponent } from './layuots/auth-layout/auth-layout.web.component';
 import { LoginPageWebComponent } from './pages/login-page/login.page.web.component';
 import { RegisterPageWebComponent } from './pages/register-page/register.page.web.component';
+import { isLoggedInGuard } from './guards/isLoggedIn.guard';
 
 const routes: Routes = [
     {
         path: '',
         component: AuthLayoutWebComponent,
+        canActivate: [isLoggedInGuard],
         children: [
             { path: '', redirectTo: 'login', pathMatch: 'full' },
             { path: 'login', component: LoginPageWebComponent },

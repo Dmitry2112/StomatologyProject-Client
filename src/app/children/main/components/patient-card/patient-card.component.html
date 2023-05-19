@@ -1,0 +1,36 @@
+<div class="patient-card">
+    <div class="patient-card__body">
+        <div class="patient-card__content">
+            <div class="patient-card__patient-photo" *ngIf="patientCardData.photo">
+                <img src="assets/images/{{ patientCardData.photo }}" alt="фото сотрудника">
+            </div>
+            <div class="patient-card__patient-data">
+                <ng-container *ngFor="let field of patientCardData.patientCardFields">
+                    <label
+                        class="patient-card__label" for="field"
+                        *ngIf="field.label; else notSetLabel"
+                    >
+                        {{ field.label }}
+                    </label>
+                    <div
+                        class="patient-card__data"
+                        id="field"
+                        *ngIf="field.data; else notSetData"
+                    >
+                        {{ field.data }}
+                    </div>
+                </ng-container>
+                <ng-template #notSetLabel>
+                    <div class="patient-card__label_not-set" >
+                        Не задано
+                    </div>
+                </ng-template>
+                <ng-template #notSetData>
+                    <div class="patient-card__data_not-set" >
+                        Не задано
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
