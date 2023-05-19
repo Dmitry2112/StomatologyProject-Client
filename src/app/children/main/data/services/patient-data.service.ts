@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { IPatientResponseModel } from '../response-models/patient.response-model.interface';
 
 @Injectable()
 export class PatientDataService {
@@ -9,7 +10,7 @@ export class PatientDataService {
     ) {
     }
 
-    public getPatientData(id: number): Observable<any> {
-        return this._http.get<any>(`http://localhost:3000/users/${id}`);
+    public getPatientData(id: number): Observable<IPatientResponseModel> {
+        return this._http.get<IPatientResponseModel>(`http://localhost:3000/users/${id}`);
     }
 }

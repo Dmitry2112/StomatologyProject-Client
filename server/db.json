@@ -19,6 +19,7 @@
         "email": "dima@rumba",
         "password": "$2a$10$UhSx.CpvRrg0QfVFu7ONJ.QRKfsUIMO6I6NO9GdxZNnmm9ZSNCemK",
         "id": 4,
+        "photo": "patient-img.svg",
         "firstName": "Дмитрий",
         "lastName": "Козаченко",
         "patronymic": "Сергеевич",
@@ -29,12 +30,41 @@
                 "number": "1",
                 "nameStageTherapy": "Диагностика",
                 "dateAppointments": "2023-02-27",
-                "services": [],
+                "services": [
+                    {
+                        "service": "Фотопротокол",
+                        "price": 2200,
+                        "count": 2,
+                        "cost": 4400,
+                        "doctorProfile": "Ортодонт"
+                    }
+                ],
                 "recommendation": "Чистите зубки"
             }
         ],
-        "plannedAppointment": [],
-        "photoDocuments": []
+        "plannedAppointment": [
+            {
+                "number": "1",
+                "nameStageTherapy": "Диагностика",
+                "dateAppointments": "2023-04-27",
+                "services": [
+                    {
+                        "service": "Фотопротокол",
+                        "price": 2200,
+                        "count": 2,
+                        "cost": 4400,
+                        "doctorProfile": "Ортодонт"
+                    }
+                ]
+            }
+        ],
+        "photoDocuments": [
+            {
+                "date": "2023-02-27",
+                "type": "Рентген",
+                "file": "Какой-то файл со снимком"
+            }
+        ]
     }
   ]
 }
