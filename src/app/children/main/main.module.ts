@@ -10,6 +10,7 @@ import { PlanPageWebComponent } from './pages/plan-page/plan.page.web.component'
 import { PhotodocsPageWebComponent } from './pages/photodocs-page/photodocs.page.web.component';
 import { PatientCardComponent } from './components/patient-card/patient-card.component';
 import { PatientDataService } from './data/services/patient-data.service';
+import { MainFooterComponent } from './components/main-footer/main-footer.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { PatientDataService } from './data/services/patient-data.service';
         MainHeaderComponent,
         NavigationComponent,
         NavigationButtonComponent,
-        PatientCardComponent
+        PatientCardComponent,
+        MainFooterComponent
     ],
     imports: [
         CommonModule,

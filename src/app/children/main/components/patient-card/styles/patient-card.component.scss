@@ -1,33 +1,36 @@
 .patient-card {
-    width: 957px;
-    padding: 50px 50px 65px;
+    width: 100%;
+    //padding: 50px 50px 65px;
     position: relative;
     background-color: white;
     margin-bottom: 33px;
 
-    &__title {
-        font-size: 28px;
-        line-height: 34px;
-        margin-bottom: 19px;
-    }
-
     &__content {
-        width: 857px;
+        width: 50%;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
+        align-items: center;
     }
 
     &__patient-data {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 2fr;
         row-gap: 25px;
         column-gap: min(30px);
+        align-content: center;
+        align-items: center;
+        justify-items: start;
+        margin-left: 10%;
     }
 
     &__label {
-        font-size: 20px;
-        line-height: 24px;
-        font-weight: 600;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+
+        color: rgba(32, 33, 36, 0.65);
 
         &_not-set {
             color: red;
@@ -44,7 +47,8 @@
     }
 
     &__patient-photo {
-        width: 155px;
-        height: 182px;
+        width: 80px;
+        height: 80px;
     }
+
 }
