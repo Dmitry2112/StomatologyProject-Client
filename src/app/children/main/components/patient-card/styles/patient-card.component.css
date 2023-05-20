@@ -12,7 +12,7 @@
 }
 .patient-card__patient-data {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 5fr;
   row-gap: 25px;
   column-gap: 30px;
   align-content: center;

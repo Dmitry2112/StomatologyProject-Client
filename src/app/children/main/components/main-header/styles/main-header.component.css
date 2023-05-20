@@ -1,4 +1,6 @@
 .header {
+  position: fixed;
+  z-index: 1000;
   height: 82px;
   width: 100%;
   padding: 0 44px;
@@ -34,6 +36,7 @@
   display: flex;
   align-items: center;
   flex-direction: row;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;

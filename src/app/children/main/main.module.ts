@@ -11,6 +11,8 @@ import { PhotodocsPageWebComponent } from './pages/photodocs-page/photodocs.page
 import { PatientCardComponent } from './components/patient-card/patient-card.component';
 import { PatientDataService } from './data/services/patient-data.service';
 import { MainFooterComponent } from './components/main-footer/main-footer.component';
+import { TherapyListComponent } from './components/therapy-list/therapy-list.component';
+import { AppointmentComponent } from './components/appointment/appointment.component';
 
 @NgModule({
     declarations: [
@@ -22,12 +24,13 @@ import { MainFooterComponent } from './components/main-footer/main-footer.compon
         NavigationComponent,
         NavigationButtonComponent,
         PatientCardComponent,
-        MainFooterComponent
+        MainFooterComponent,
+        TherapyListComponent,
+        AppointmentComponent
     ],
     imports: [
         CommonModule,
         RouterModule,
-
     ],
     providers: [
         PatientDataService

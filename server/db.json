@@ -25,35 +25,40 @@
         "patronymic": "Сергеевич",
         "birthDate": "2002-12-21",
         "role": "PATIENT",
-        "completedAppointments": [
+        "therapyList": [
             {
-                "number": "1",
-                "nameStageTherapy": "Диагностика",
-                "dateAppointments": "2023-02-27",
-                "services": [
+                "name": "Установка брекетов",
+                "completedAppointments": [
                     {
-                        "service": "Фотопротокол",
-                        "price": 2200,
-                        "count": 2,
-                        "cost": 4400,
-                        "doctorProfile": "Ортодонт"
+                        "number": "1",
+                        "nameStageTherapy": "Диагностика",
+                        "dateAppointments": "2023-02-27",
+                        "services": [
+                            {
+                                "service": "Фотопротокол",
+                                "price": 2200,
+                                "count": 2,
+                                "cost": 4400,
+                                "doctorProfile": "Ортодонт"
+                            }
+                        ],
+                        "recommendation": "Чистите зубки"
                     }
                 ],
-                "recommendation": "Чистите зубки"
-            }
-        ],
-        "plannedAppointment": [
-            {
-                "number": "1",
-                "nameStageTherapy": "Диагностика",
-                "dateAppointments": "2023-04-27",
-                "services": [
+                "plannedAppointments": [
                     {
-                        "service": "Фотопротокол",
-                        "price": 2200,
-                        "count": 2,
-                        "cost": 4400,
-                        "doctorProfile": "Ортодонт"
+                        "number": "1",
+                        "nameStageTherapy": "Установка чего-то",
+                        "dateAppointments": "2023-04-27",
+                        "services": [
+                            {
+                                "service": "Супер лечение",
+                                "price": 5200,
+                                "count": 1,
+                                "cost": 5200,
+                                "doctorProfile": "Супер врач"
+                            }
+                        ]
                     }
                 ]
             }
