@@ -1,20 +1,27 @@
 <div class="therapy">
-    <div class="therapy__title">
-
-    </div>
-    <div class="therapy__content">
-        <div class="appointment-title">
-
+    <ng-container *ngFor="let therapyData of therapyListModel.therapyList">
+        <div class="therapy__title">
+            {{ therapyData.therapyName }}
         </div>
-        <div class="completed-appointments">
-            <appointment></appointment>
-        </div>
+        <div class="therapy__content">
+            <div class="appointment-title">
+                Пройденные приемы:
+            </div>
+            <ng-container *ngFor="let completedAppointment of therapyData.completedAppointments">
+                <div class="completed-appointments">
+                    <appointment [appointmentData]="completedAppointment"></appointment>
+                </div>
+            </ng-container>
 
-        <div class="appointment-title">
-
+            <hr>
+            <div class="appointment-title">
+                Планируемые приемы:
+            </div>
+            <ng-container *ngFor="let plannedAppointment of therapyData.plannedAppointments">
+                <div class="planned-appointments">
+                    <appointment [appointmentData]="plannedAppointment"></appointment>
+                </div>
+            </ng-container>
         </div>
-        <div class="planned-appointments">
-            <appointment></appointment>
-        </div>
-    </div>
+    </ng-container>
 </div>

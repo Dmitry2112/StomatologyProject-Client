@@ -1,1 +1,58 @@
+<div class="appointment-info" *ngIf="appointmentData">
+    <div class="appointment-info__table">
+        <div class="appointment-info__name-label">Наименование этапа лечения</div>
+        <div class="appointment-info__name-data">
+            {{ appointmentData.numberAppointment }}. {{ appointmentData.nameStageTherapy }}
+        </div>
 
+        <div class="appointment-info__date-label">Дата приёма</div>
+        <div class="appointment-info__date-data">{{ appointmentData.dateAppointment }}</div>
+
+        <div class="appointment-info__services-label">Услуга</div>
+        <div class="appointment-info__services-label">Цена за шт. </div>
+        <div class="appointment-info__services-label">Кол-во</div>
+        <div class="appointment-info__services-label">Стоимость</div>
+        <div class="appointment-info__services-label">Профиль врача</div>
+
+        <ng-container *ngFor="let service of appointmentData.services">
+            <div class="appointment-info__services-data">{{ service.serviceName }}</div>
+            <div class="appointment-info__services-data">{{ service.price }}</div>
+            <div class="appointment-info__services-data">{{ service.count }}</div>
+            <div class="appointment-info__services-data">{{ service.cost }}</div>
+            <div class="appointment-info__services-data">
+                <div class="doctor">{{ service.doctorProfile }}</div>
+            </div>
+        </ng-container>
+    </div>
+
+    <div class="appointment-sum">
+        <div class="appointment-sum__text">
+            Сумма за весь приём:
+        </div>
+        <div class="appointment-sum__number">
+            {{ sumCostForAppointment }}
+        </div>
+    </div>
+
+    <div
+        class="appointment-recommendations"
+        *ngIf="appointmentData.recommendations"
+        (click)="open()"
+    >
+        <span class="appointment-recommendations__title">Рекомендации</span>
+        <img
+            src="/assets/images/arrow-down-sign-to-navigate.svg"
+            class="appointment-recommendations__chevron"
+            [ngClass]="{'appointment-recommendations__chevron_open': (isOpen$ | async)}"
+        >
+        <div
+            class="appointment-recommendations__container"
+            [ngClass]="{'appointment-recommendations__container_open': (isOpen$ | async)}"
+        >
+            <div class="appointment-recommendations__text">
+                {{ appointmentData.recommendations }}
+            </div>
+        </div>
+
+    </div>
+</div>

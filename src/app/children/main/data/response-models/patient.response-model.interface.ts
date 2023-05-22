@@ -1,3 +1,5 @@
+import { ITherapyData } from '../interfaces/therapy-data.interface';
+
 export interface IPatientResponseModel {
     email: string,
     password: string,
@@ -8,7 +10,6 @@ export interface IPatientResponseModel {
     patronymic: string,
     birthDate: string,
     role: string,
-    completedAppointments: any[],
-    plannedAppointment: any[],
+    therapyList: ITherapyData[],
     photoDocuments: any[]
 }

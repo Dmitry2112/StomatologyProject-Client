@@ -1,3 +1,26 @@
+.therapy {
+  font-family: Roboto, sans-serif;
+}
+.therapy__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 38px;
+  color: #202124;
+  margin-bottom: 30px;
+}
+.therapy__content {
+  border: 1px solid #A1A1A1;
+  max-width: 1050px;
+}
 
+.appointment-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: #202124;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  margin-left: 15px;
+}
 
 /*# sourceMappingURL=therapy-list.component.css.map */

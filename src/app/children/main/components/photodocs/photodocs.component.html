@@ -1,0 +1,30 @@
+<div class="photodocs-info">
+    <div class="photodocs-info__filter">
+        Фильтр
+    </div>
+    <div class="photodocs-info__table">
+
+        <div class="photodocs-info__label">Дата</div>
+        <div class="photodocs-info__label">Вид фото</div>
+        <div class="photodocs-info__label">Файл для скачивания</div>
+
+        <ng-container *ngFor="let i of [1, 2, 3, 4]">
+            <div class="photodocs-info__data">23.03.2023</div>
+            <div class="photodocs-info__data">Рентген</div>
+            <div class="photodocs-info__data">
+                <img
+                    class="photodocs-info__img"
+                    src="assets/images/photodocs-pdf.svg"
+                    alt="тип документа"
+                >
+                <a
+                    class="photodocs-file"
+                    href="/assets/images/patient-img.svg"
+                    download="myFile"
+                >
+                    Рентген
+                </a>
+            </div>
+        </ng-container>
+    </div>
+</div>

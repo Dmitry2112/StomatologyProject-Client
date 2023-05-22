@@ -13,6 +13,7 @@ import { PatientDataService } from './data/services/patient-data.service';
 import { MainFooterComponent } from './components/main-footer/main-footer.component';
 import { TherapyListComponent } from './components/therapy-list/therapy-list.component';
 import { AppointmentComponent } from './components/appointment/appointment.component';
+import { PhotodocsComponent } from './components/photodocs/photodocs.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { AppointmentComponent } from './components/appointment/appointment.compo
         PatientCardComponent,
         MainFooterComponent,
         TherapyListComponent,
-        AppointmentComponent
+        AppointmentComponent,
+        PhotodocsComponent
     ],
     imports: [
         CommonModule,
