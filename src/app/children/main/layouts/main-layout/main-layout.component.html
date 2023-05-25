@@ -1,6 +1,9 @@
 <main-header></main-header>
 <aside>
-    <div class="side-bar">
+    <div
+        class="side-bar"
+        [ngClass]="{'side-bar_open': openNavigation$ | async}"
+    >
         <div class="side-bar__content">
             <navigation></navigation>
         </div>

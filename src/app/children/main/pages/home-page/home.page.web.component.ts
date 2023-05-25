@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { PatientDataService } from '../../data/services/patient-data.service';
 import { PatientModel } from '../../data/models/patient.model';
 import { PatientViewModel } from '../../view-models/patient.view-model';
+import { IPatientResponseModel } from '../../data/response-models/patient.response-model.interface';
 
 @Component({
     selector: 'home-page',
@@ -20,7 +21,7 @@ export class HomePageWebComponent implements OnInit {
 
     public ngOnInit(): void {
         this._patientDataService.getPatientData(4)
-            .subscribe((data: any) => {
+            .subscribe((data: IPatientResponseModel) => {
                 this.patientModel.fromDto(data);
                 this.patientViewModel.fromModel(this.patientModel);
 

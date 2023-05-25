@@ -14,7 +14,20 @@
   align-items: center;
   justify-content: space-between;
 }
-.header__content__FAQ {
+.header__user-info {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+}
+.header__user-img {
+  margin-right: 15px;
+}
+.header__FAQ {
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -32,17 +45,7 @@
   border-radius: 4px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.08));
 }
-.header__content__user-info {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
-}
-.header__content__burger-button {
+.header__burger-button {
   display: none;
 }
 
@@ -53,18 +56,16 @@
 @media screen and (max-width: 895px) {
   .header {
     height: 53px;
-    width: 100%;
     padding: 8px;
-    background: white;
   }
   .header__content {
     flex-direction: row-reverse;
     padding: 0 3%;
   }
-  .header__content__FAQ {
+  .header__FAQ {
     display: none;
   }
-  .header__content__burger-button {
+  .header__burger-button {
     display: flex;
     background: #FFFFFF;
     border: none;

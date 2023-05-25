@@ -1,6 +1,10 @@
 .home {
     margin-top: 82px;
 
+    @media screen and (max-width: 895px) {
+        margin-top: 53px;
+    }
+
     &__title {
         margin-bottom: 40px;
         font-size: 30px;

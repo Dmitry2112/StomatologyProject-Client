@@ -14,6 +14,8 @@ import { MainFooterComponent } from './components/main-footer/main-footer.compon
 import { TherapyListComponent } from './components/therapy-list/therapy-list.component';
 import { AppointmentComponent } from './components/appointment/appointment.component';
 import { PhotodocsComponent } from './components/photodocs/photodocs.component';
+import { OPEN_NAVIGATION_TOKEN } from './data/tokens/open-navigation.token';
+import { BehaviorSubject } from 'rxjs';
 
 @NgModule({
     declarations: [
@@ -35,7 +37,11 @@ import { PhotodocsComponent } from './components/photodocs/photodocs.component';
         RouterModule,
     ],
     providers: [
-        PatientDataService
+        PatientDataService,
+        {
+            provide: OPEN_NAVIGATION_TOKEN,
+            useValue: new BehaviorSubject<boolean>(false)
+        }
     ]
 })
 export class MainModule {

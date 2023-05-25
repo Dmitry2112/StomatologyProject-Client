@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { OPEN_NAVIGATION_TOKEN } from '../../data/tokens/open-navigation.token';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
     selector: 'main-layout',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
     styleUrls: ['./styles/main-layout.component.scss']
 })
 export class MainLayoutComponent {
-
+    constructor(@Inject(OPEN_NAVIGATION_TOKEN) public openNavigation$: BehaviorSubject<boolean>) {
+    }
 }
