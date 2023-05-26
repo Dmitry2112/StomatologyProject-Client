@@ -18,7 +18,7 @@ export class TherapyListComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this._patientDataService.getPatientData(4)
+        this._patientDataService.getPatientData(Number(localStorage.getItem('userId')))
             .subscribe((data: IPatientResponseModel) => {
                 this.therapyListModel.fromDto(data);
 

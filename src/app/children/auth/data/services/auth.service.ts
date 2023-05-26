@@ -28,6 +28,7 @@ export class AuthService {
             .pipe(
                 tap((response: IAuthUserResponseModel) => {
                     this.setToken(response.accessToken);
+                    this.setUserId(response.user.id);
                 })
             );
     }
@@ -49,6 +50,10 @@ export class AuthService {
     private setToken(token: string): void {
         localStorage.setItem('token', token);
         this._token = token;
+    }
+
+    private setUserId(userId: number): void {
+        localStorage.setItem('userId', userId.toString());
     }
 
     private removeToken(): void {

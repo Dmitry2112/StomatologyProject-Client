@@ -10,7 +10,7 @@ export class NavigationButtonComponent implements OnInit {
     public pageRout!: string;
 
     @Input()
-    public id!: string;
+    public id!: string | null;
 
     @Input()
     public name!: string;

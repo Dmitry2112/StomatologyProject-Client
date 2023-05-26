@@ -5,7 +5,7 @@
         [ngClass]="{'side-bar_open': openNavigation$ | async}"
     >
         <div class="side-bar__content">
-            <navigation></navigation>
+            <navigation [id]="userId"></navigation>
         </div>
     </div>
 </aside>
