@@ -14,7 +14,7 @@ const routes: Routes = [
         children: [
             // {
             //     path: '',
-            //     redirectTo: '1/home',
+            //     redirectTo: ':patientId/home',
             //     pathMatch: 'full'
             // },
             {

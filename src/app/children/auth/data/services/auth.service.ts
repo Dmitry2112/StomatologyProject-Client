@@ -19,6 +19,7 @@ export class AuthService {
             .pipe(
                 tap((response: IAuthUserResponseModel) => {
                     this.setToken(response.accessToken);
+                    this.setUserId(response.user.id);
                 })
             );
     }
@@ -28,7 +29,7 @@ export class AuthService {
             .pipe(
                 tap((response: IAuthUserResponseModel) => {
                     this.setToken(response.accessToken);
-                    this.setUserId(response.user.id);
+                    this.setUserId(response.user.id)
                 })
             );
     }

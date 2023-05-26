@@ -1,11 +1,8 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { PatientDataService } from '../../data/services/patient-data.service';
 import { PatientModel } from '../../data/models/patient.model';
 import { PatientViewModel } from '../../view-models/patient.view-model';
 import { IPatientResponseModel } from '../../data/response-models/patient.response-model.interface';
-import { AuthService } from '../../../auth/data/services/auth.service';
-import { Subscription } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'home-page',

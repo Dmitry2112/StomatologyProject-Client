@@ -1,0 +1,54 @@
+.admin-card {
+    width: 100%;
+    //padding: 50px 50px 65px;
+    position: relative;
+    background-color: white;
+    margin-bottom: 33px;
+
+    &__content {
+        width: 50%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__admin-data {
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        row-gap: 25px;
+        column-gap: min(30px);
+        align-content: center;
+        align-items: center;
+        justify-items: start;
+        margin-left: 10%;
+    }
+
+    &__label {
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+
+        color: rgba(32, 33, 36, 0.65);
+
+        &_not-set {
+            color: red;
+        }
+    }
+
+    &__data {
+        font-size: 20px;
+        line-height: 24px;
+
+        &_not-set {
+            color: red;
+        }
+    }
+
+    &__admin-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+}

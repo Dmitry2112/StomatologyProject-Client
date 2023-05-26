@@ -7,6 +7,7 @@ import { AuthService } from '../../data/services/auth.service';
 import { ILoginForm } from '../../data/interfaces/login-form.interface';
 import { IAuthUserRequestModel } from '../../data/request-models/auth-user.request-model.interface';
 import { passwordValidator } from '../../validators/password.validator';
+import { IAuthUserResponseModel } from '../../data/response-models/auth-user.response-model.interface';
 
 
 @Component({
@@ -71,10 +72,12 @@ export class LoginPageWebComponent implements OnInit, OnDestroy {
         this._loginSubscription = this._auth
             .login(user)
             .subscribe(
-                () => this._router.navigate(['/cabinet']),
-                (error: Error) => {
-                    console.warn(error);
-                    this.loginForm.enable();
+                (data: IAuthUserResponseModel) => {
+                    if (data.user.role === 'ADMIN') {
+                        this._router.navigate(['/admin']);
+                    } else {
+                        this._router.navigate(['/cabinet']);
+                    }
                 }
             );
     }

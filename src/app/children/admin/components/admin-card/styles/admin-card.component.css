@@ -1,0 +1,46 @@
+.admin-card {
+  width: 100%;
+  position: relative;
+  background-color: white;
+  margin-bottom: 33px;
+}
+.admin-card__content {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.admin-card__admin-data {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  row-gap: 25px;
+  column-gap: 30px;
+  align-content: center;
+  align-items: center;
+  justify-items: start;
+  margin-left: 10%;
+}
+.admin-card__label {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(32, 33, 36, 0.65);
+}
+.admin-card__label_not-set {
+  color: red;
+}
+.admin-card__data {
+  font-size: 20px;
+  line-height: 24px;
+}
+.admin-card__data_not-set {
+  color: red;
+}
+.admin-card__admin-photo {
+  width: 80px;
+  height: 80px;
+}
+
+/*# sourceMappingURL=admin-card.component.css.map */

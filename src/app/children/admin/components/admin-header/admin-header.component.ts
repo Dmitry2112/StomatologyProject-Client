@@ -1,15 +1,15 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { PatientDataService } from '../../data/services/patient-data.service';
-import { IPatientResponseModel } from '../../data/response-models/patient.response-model.interface';
-import { OPEN_NAVIGATION_TOKEN } from '../../data/tokens/open-navigation.token';
+import { PatientDataService } from '../../../main/data/services/patient-data.service';
+import { OPEN_NAVIGATION_TOKEN } from '../../../main/data/tokens/open-navigation.token';
 import { BehaviorSubject } from 'rxjs';
+import { IPatientResponseModel } from '../../../main/data/response-models/patient.response-model.interface';
 
 @Component({
-    selector: 'main-header',
-    templateUrl: './main-header.component.html',
-    styleUrls: ['./styles/main-header.component.scss']
+    selector: 'admin-header',
+    templateUrl: './admin-header.component.html',
+    styleUrls: ['./styles/admin-header.component.scss']
 })
-export class MainHeaderComponent implements OnInit {
+export class AdminHeaderComponent implements OnInit {
     @Input()
     public userInfo!: string;
 

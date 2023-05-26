@@ -15,6 +15,10 @@ const routes: Routes = [
     {
         path: 'cabinet',
         loadChildren: () => import('./children/main/main-routing.module').then(module => module.MainRoutingModule),
+    },
+    {
+        path: 'admin',
+        loadChildren: () => import('./children/admin/admin-routing.module').then(module => module.AdminRoutingModule),
     }
 ];
 

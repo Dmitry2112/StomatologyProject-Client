@@ -8,6 +8,7 @@ import { IRegisterForm } from '../../data/interfaces/register-form.interface';
 import { ILoginForm } from '../../data/interfaces/login-form.interface';
 import { IAuthUserRequestModel } from '../../data/request-models/auth-user.request-model.interface';
 import { passwordValidator } from '../../validators/password.validator';
+import { IAuthUserResponseModel } from '../../data/response-models/auth-user.response-model.interface';
 
 @Component({
     selector: 'auth-register-page',
@@ -56,16 +57,12 @@ export class RegisterPageWebComponent implements OnDestroy {
         this._registerSubscription = this._auth
             .register(user)
             .subscribe(
-                () => {
-                    this._router.navigate(['/cabinet'], {
-                        queryParams: {
-                            registered: true
-                        }
-                    });
-                },
-                (error: Error) => {
-                    console.warn(error);
-                    this.registerForm.enable();
+                (data: IAuthUserResponseModel) => {
+                    if (data.user.role === 'ADMIN') {
+                        this._router.navigate(['/admin']);
+                    } else {
+                        this._router.navigate(['/cabinet']);
+                    }
                 }
             );
     }

@@ -16,258 +16,269 @@
       "id": 3
     },
     {
-        "email": "dima@rumba",
-        "password": "$2a$10$UhSx.CpvRrg0QfVFu7ONJ.QRKfsUIMO6I6NO9GdxZNnmm9ZSNCemK",
-        "id": 4,
+      "email": "dima@rumba",
+      "password": "$2a$10$UhSx.CpvRrg0QfVFu7ONJ.QRKfsUIMO6I6NO9GdxZNnmm9ZSNCemK",
+      "id": 4,
+      "photo": "patient-img.svg",
+      "firstName": "Дмитрий",
+      "lastName": "Козаченко",
+      "patronymic": "Сергеевич",
+      "birthDate": "2002-12-21",
+      "role": "PATIENT",
+      "therapyList": [
+        {
+          "therapyName": "Установка брекетов",
+          "completedAppointments": [
+            {
+              "numberAppointment": "1",
+              "nameStageTherapy": "Диагностика",
+              "dateAppointment": "2023-02-27",
+              "services": [
+                {
+                  "serviceName": "Фотопротокол",
+                  "price": 2200,
+                  "count": 2,
+                  "cost": 4400,
+                  "doctorProfile": "Ортодонт"
+                },
+                {
+                  "serviceName": "Фотопротокол",
+                  "price": 2200,
+                  "count": 2,
+                  "cost": 4400,
+                  "doctorProfile": "Ортодонт"
+                },
+                {
+                  "serviceName": "Фотопротокол",
+                  "price": 2200,
+                  "count": 2,
+                  "cost": 4400,
+                  "doctorProfile": "Ортодонт"
+                },
+                {
+                  "serviceName": "Фотопротокол",
+                  "price": 2200,
+                  "count": 2,
+                  "cost": 4400,
+                  "doctorProfile": "Ортодонт"
+                }
+              ],
+              "recommendations": "Чистить зубы следует не менее 2-х раз в день, в обязательном порядке - утром после завтрака и вечером перед сном. В целях гигиены желательно использовать щетку из искусственной щетины. Для предотвращения развития бактерий после использования щетку необходимо намылить, а перед использованием - тщательно сполоснуть."
+            }
+          ],
+          "plannedAppointments": [
+            {
+              "numberAppointment": "1",
+              "nameStageTherapy": "Установка чего-то",
+              "dateAppointment": "2023-04-27",
+              "services": [
+                {
+                  "serviceName": "Супер лечение",
+                  "price": 5200,
+                  "count": 1,
+                  "cost": 5200,
+                  "doctorProfile": "Супер врач"
+                },
+                {
+                  "serviceName": "Супер лечение",
+                  "price": 5200,
+                  "count": 1,
+                  "cost": 5200,
+                  "doctorProfile": "Супер врач"
+                },
+                {
+                  "serviceName": "Супер лечение",
+                  "price": 5200,
+                  "count": 1,
+                  "cost": 5200,
+                  "doctorProfile": "Супер врач"
+                },
+                {
+                  "serviceName": "Супер лечение",
+                  "price": 5200,
+                  "count": 1,
+                  "cost": 5200,
+                  "doctorProfile": "Супер врач"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "therapyName": "Установка брекетов",
+          "completedAppointments": [
+            {
+              "numberAppointment": "1",
+              "nameStageTherapy": "Диагностика",
+              "dateAppointment": "2023-02-27",
+              "services": [
+                {
+                  "serviceName": "Фотопротокол",
+                  "price": 2200,
+                  "count": 2,
+                  "cost": 4400,
+                  "doctorProfile": "Ортодонт"
+                },
+                {
+                  "serviceName": "Фотопротокол",
+                  "price": 2200,
+                  "count": 2,
+                  "cost": 4400,
+                  "doctorProfile": "Ортодонт"
+                },
+                {
+                  "serviceName": "Фотопротокол",
+                  "price": 2200,
+                  "count": 2,
+                  "cost": 4400,
+                  "doctorProfile": "Ортодонт"
+                },
+                {
+                  "serviceName": "Фотопротокол",
+                  "price": 2200,
+                  "count": 2,
+                  "cost": 4400,
+                  "doctorProfile": "Ортодонт"
+                }
+              ],
+              "recommendations": "Чистить зубы следует не менее 2-х раз в день, в обязательном порядке - утром после завтрака и вечером перед сном. В целях гигиены желательно использовать щетку из искусственной щетины. Для предотвращения развития бактерий после использования щетку необходимо намылить, а перед использованием - тщательно сполоснуть."
+            }
+          ],
+          "plannedAppointments": [
+            {
+              "numberAppointment": "1",
+              "nameStageTherapy": "Установка чего-то",
+              "dateAppointment": "2023-04-27",
+              "services": [
+                {
+                  "serviceName": "Супер лечение",
+                  "price": 5200,
+                  "count": 1,
+                  "cost": 5200,
+                  "doctorProfile": "Супер врач"
+                },
+                {
+                  "serviceName": "Супер лечение",
+                  "price": 5200,
+                  "count": 1,
+                  "cost": 5200,
+                  "doctorProfile": "Супер врач"
+                },
+                {
+                  "serviceName": "Супер лечение",
+                  "price": 5200,
+                  "count": 1,
+                  "cost": 5200,
+                  "doctorProfile": "Супер врач"
+                },
+                {
+                  "serviceName": "Супер лечение",
+                  "price": 5200,
+                  "count": 1,
+                  "cost": 5200,
+                  "doctorProfile": "Супер врач"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "therapyName": "Установка брекетов",
+          "completedAppointments": [
+            {
+              "numberAppointment": "1",
+              "nameStageTherapy": "Диагностика",
+              "dateAppointment": "2023-02-27",
+              "services": [
+                {
+                  "serviceName": "Фотопротокол",
+                  "price": 2200,
+                  "count": 2,
+                  "cost": 4400,
+                  "doctorProfile": "Ортодонт"
+                },
+                {
+                  "serviceName": "Фотопротокол",
+                  "price": 2200,
+                  "count": 2,
+                  "cost": 4400,
+                  "doctorProfile": "Ортодонт"
+                },
+                {
+                  "serviceName": "Фотопротокол",
+                  "price": 2200,
+                  "count": 2,
+                  "cost": 4400,
+                  "doctorProfile": "Ортодонт"
+                },
+                {
+                  "serviceName": "Фотопротокол",
+                  "price": 2200,
+                  "count": 2,
+                  "cost": 4400,
+                  "doctorProfile": "Ортодонт"
+                }
+              ],
+              "recommendations": "Чистить зубы следует не менее 2-х раз в день, в обязательном порядке - утром после завтрака и вечером перед сном. В целях гигиены желательно использовать щетку из искусственной щетины. Для предотвращения развития бактерий после использования щетку необходимо намылить, а перед использованием - тщательно сполоснуть."
+            }
+          ],
+          "plannedAppointments": [
+            {
+              "numberAppointment": "1",
+              "nameStageTherapy": "Установка чего-то",
+              "dateAppointment": "2023-04-27",
+              "services": [
+                {
+                  "serviceName": "Супер лечение",
+                  "price": 5200,
+                  "count": 1,
+                  "cost": 5200,
+                  "doctorProfile": "Супер врач"
+                },
+                {
+                  "serviceName": "Супер лечение",
+                  "price": 5200,
+                  "count": 1,
+                  "cost": 5200,
+                  "doctorProfile": "Супер врач"
+                },
+                {
+                  "serviceName": "Супер лечение",
+                  "price": 5200,
+                  "count": 1,
+                  "cost": 5200,
+                  "doctorProfile": "Супер врач"
+                },
+                {
+                  "serviceName": "Супер лечение",
+                  "price": 5200,
+                  "count": 1,
+                  "cost": 5200,
+                  "doctorProfile": "Супер врач"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "photoDocuments": [
+        {
+          "date": "2023-02-27",
+          "type": "Рентген",
+          "file": "Какой-то файл со снимком"
+        }
+      ]
+    },
+    {
+        "email": "admin@mail",
+        "password": "$2a$10$.KztHVlAlbLNpyhu01tKkuZWJY7m851RVjXtVJ7DGNH956ex/KMH2",
+        "id": 5,
         "photo": "patient-img.svg",
-        "firstName": "Дмитрий",
-        "lastName": "Козаченко",
-        "patronymic": "Сергеевич",
+        "firstName": "Админ",
+        "lastName": "Админов",
+        "patronymic": "Админович",
         "birthDate": "2002-12-21",
-        "role": "PATIENT",
-        "therapyList": [
-            {
-                "therapyName": "Установка брекетов",
-                "completedAppointments": [
-                    {
-                        "numberAppointment": "1",
-                        "nameStageTherapy": "Диагностика",
-                        "dateAppointment": "2023-02-27",
-                        "services": [
-                            {
-                                "serviceName": "Фотопротокол",
-                                "price": 2200,
-                                "count": 2,
-                                "cost": 4400,
-                                "doctorProfile": "Ортодонт"
-                            },
-                            {
-                                "serviceName": "Фотопротокол",
-                                "price": 2200,
-                                "count": 2,
-                                "cost": 4400,
-                                "doctorProfile": "Ортодонт"
-                            },
-                            {
-                                "serviceName": "Фотопротокол",
-                                "price": 2200,
-                                "count": 2,
-                                "cost": 4400,
-                                "doctorProfile": "Ортодонт"
-                            },
-                            {
-                                "serviceName": "Фотопротокол",
-                                "price": 2200,
-                                "count": 2,
-                                "cost": 4400,
-                                "doctorProfile": "Ортодонт"
-                            }
-                        ],
-                        "recommendations": "Чистить зубы следует не менее 2-х раз в день, в обязательном порядке - утром после завтрака и вечером перед сном. В целях гигиены желательно использовать щетку из искусственной щетины. Для предотвращения развития бактерий после использования щетку необходимо намылить, а перед использованием - тщательно сполоснуть."
-                    }
-                ],
-                "plannedAppointments": [
-                    {
-                        "numberAppointment": "1",
-                        "nameStageTherapy": "Установка чего-то",
-                        "dateAppointment": "2023-04-27",
-                        "services": [
-                            {
-                                "serviceName": "Супер лечение",
-                                "price": 5200,
-                                "count": 1,
-                                "cost": 5200,
-                                "doctorProfile": "Супер врач"
-                            },
-                            {
-                                "serviceName": "Супер лечение",
-                                "price": 5200,
-                                "count": 1,
-                                "cost": 5200,
-                                "doctorProfile": "Супер врач"
-                            },
-                            {
-                                "serviceName": "Супер лечение",
-                                "price": 5200,
-                                "count": 1,
-                                "cost": 5200,
-                                "doctorProfile": "Супер врач"
-                            },
-                            {
-                                "serviceName": "Супер лечение",
-                                "price": 5200,
-                                "count": 1,
-                                "cost": 5200,
-                                "doctorProfile": "Супер врач"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "therapyName": "Установка брекетов",
-                "completedAppointments": [
-                    {
-                        "numberAppointment": "1",
-                        "nameStageTherapy": "Диагностика",
-                        "dateAppointment": "2023-02-27",
-                        "services": [
-                            {
-                                "serviceName": "Фотопротокол",
-                                "price": 2200,
-                                "count": 2,
-                                "cost": 4400,
-                                "doctorProfile": "Ортодонт"
-                            },
-                            {
-                                "serviceName": "Фотопротокол",
-                                "price": 2200,
-                                "count": 2,
-                                "cost": 4400,
-                                "doctorProfile": "Ортодонт"
-                            },
-                            {
-                                "serviceName": "Фотопротокол",
-                                "price": 2200,
-                                "count": 2,
-                                "cost": 4400,
-                                "doctorProfile": "Ортодонт"
-                            },
-                            {
-                                "serviceName": "Фотопротокол",
-                                "price": 2200,
-                                "count": 2,
-                                "cost": 4400,
-                                "doctorProfile": "Ортодонт"
-                            }
-                        ],
-                        "recommendations": "Чистить зубы следует не менее 2-х раз в день, в обязательном порядке - утром после завтрака и вечером перед сном. В целях гигиены желательно использовать щетку из искусственной щетины. Для предотвращения развития бактерий после использования щетку необходимо намылить, а перед использованием - тщательно сполоснуть."
-                    }
-                ],
-                "plannedAppointments": [
-                    {
-                        "numberAppointment": "1",
-                        "nameStageTherapy": "Установка чего-то",
-                        "dateAppointment": "2023-04-27",
-                        "services": [
-                            {
-                                "serviceName": "Супер лечение",
-                                "price": 5200,
-                                "count": 1,
-                                "cost": 5200,
-                                "doctorProfile": "Супер врач"
-                            },
-                            {
-                                "serviceName": "Супер лечение",
-                                "price": 5200,
-                                "count": 1,
-                                "cost": 5200,
-                                "doctorProfile": "Супер врач"
-                            },
-                            {
-                                "serviceName": "Супер лечение",
-                                "price": 5200,
-                                "count": 1,
-                                "cost": 5200,
-                                "doctorProfile": "Супер врач"
-                            },
-                            {
-                                "serviceName": "Супер лечение",
-                                "price": 5200,
-                                "count": 1,
-                                "cost": 5200,
-                                "doctorProfile": "Супер врач"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "therapyName": "Установка брекетов",
-                "completedAppointments": [
-                    {
-                        "numberAppointment": "1",
-                        "nameStageTherapy": "Диагностика",
-                        "dateAppointment": "2023-02-27",
-                        "services": [
-                            {
-                                "serviceName": "Фотопротокол",
-                                "price": 2200,
-                                "count": 2,
-                                "cost": 4400,
-                                "doctorProfile": "Ортодонт"
-                            },
-                            {
-                                "serviceName": "Фотопротокол",
-                                "price": 2200,
-                                "count": 2,
-                                "cost": 4400,
-                                "doctorProfile": "Ортодонт"
-                            },
-                            {
-                                "serviceName": "Фотопротокол",
-                                "price": 2200,
-                                "count": 2,
-                                "cost": 4400,
-                                "doctorProfile": "Ортодонт"
-                            },
-                            {
-                                "serviceName": "Фотопротокол",
-                                "price": 2200,
-                                "count": 2,
-                                "cost": 4400,
-                                "doctorProfile": "Ортодонт"
-                            }
-                        ],
-                        "recommendations": "Чистить зубы следует не менее 2-х раз в день, в обязательном порядке - утром после завтрака и вечером перед сном. В целях гигиены желательно использовать щетку из искусственной щетины. Для предотвращения развития бактерий после использования щетку необходимо намылить, а перед использованием - тщательно сполоснуть."
-                    }
-                ],
-                "plannedAppointments": [
-                    {
-                        "numberAppointment": "1",
-                        "nameStageTherapy": "Установка чего-то",
-                        "dateAppointment": "2023-04-27",
-                        "services": [
-                            {
-                                "serviceName": "Супер лечение",
-                                "price": 5200,
-                                "count": 1,
-                                "cost": 5200,
-                                "doctorProfile": "Супер врач"
-                            },
-                            {
-                                "serviceName": "Супер лечение",
-                                "price": 5200,
-                                "count": 1,
-                                "cost": 5200,
-                                "doctorProfile": "Супер врач"
-                            },
-                            {
-                                "serviceName": "Супер лечение",
-                                "price": 5200,
-                                "count": 1,
-                                "cost": 5200,
-                                "doctorProfile": "Супер врач"
-                            },
-                            {
-                                "serviceName": "Супер лечение",
-                                "price": 5200,
-                                "count": 1,
-                                "cost": 5200,
-                                "doctorProfile": "Супер врач"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ],
-        "photoDocuments": [
-            {
-                "date": "2023-02-27",
-                "type": "Рентген",
-                "file": "Какой-то файл со снимком"
-            }
-        ]
+        "role": "ADMIN"
     }
   ]
 }

@@ -1,0 +1,40 @@
+.home {
+  margin-top: 82px;
+}
+@media screen and (max-width: 895px) {
+  .home {
+    margin-top: 53px;
+  }
+}
+.home__title {
+  margin-bottom: 40px;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 60px;
+  color: #202124;
+}
+
+.cabinet-info__title {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #202124;
+}
+.cabinet-info__description {
+  max-width: 800px;
+  font-size: 18px;
+  line-height: 35px;
+  color: #202124;
+  margin-bottom: 1%;
+}
+
+.cabinet-info-list {
+  margin-bottom: 30px;
+  padding-left: 30px;
+}
+.cabinet-info-list__item {
+  margin-bottom: 15px;
+}
+
+/*# sourceMappingURL=admin-home.page.web.component.css.map */

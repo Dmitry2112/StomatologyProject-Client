@@ -3,5 +3,6 @@ export interface IAuthUserResponseModel {
     user: {
         email: string;
         id: number;
+        role: string;
     };
 }
