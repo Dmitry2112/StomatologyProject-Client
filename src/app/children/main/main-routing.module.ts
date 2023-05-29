@@ -12,11 +12,11 @@ const routes: Routes = [
         component: MainLayoutComponent,
         canActivate: [authGuard],
         children: [
-            // {
-            //     path: '',
-            //     redirectTo: ':patientId/home',
-            //     pathMatch: 'full'
-            // },
+            {
+                path: '',
+                redirectTo: '4/home',
+                pathMatch: 'full'
+            },
             {
                 path: ':patientId/home',
                 component: HomePageWebComponent
