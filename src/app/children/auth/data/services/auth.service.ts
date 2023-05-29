@@ -25,7 +25,7 @@ export class AuthService {
     }
 
     public login(user: IAuthUserRequestModel): Observable<IAuthUserResponseModel> {
-        return this._http.post<IAuthUserResponseModel>('http://localhost:3000/login', user)
+        return this._http.post<IAuthUserResponseModel>('https://restful-api-vercel-lake.vercel.app/login', user)
             .pipe(
                 tap((response: IAuthUserResponseModel) => {
                     this.setToken(response.accessToken);

@@ -11,6 +11,6 @@ export class PatientDataService {
     }
 
     public getPatientData(id: number): Observable<IPatientResponseModel> {
-        return this._http.get<IPatientResponseModel>(`http://localhost:3000/users/${id}`);
+        return this._http.get<IPatientResponseModel>(`https://restful-api-vercel-lake.vercel.app/users/${id}`);
     }
 }
