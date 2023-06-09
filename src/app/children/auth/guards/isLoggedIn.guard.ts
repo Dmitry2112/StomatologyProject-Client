@@ -11,7 +11,8 @@ export const isLoggedInGuard: CanActivateFn = () => {
         if (router.url.includes('admin')) {
             return true;
         } else {
-            router.navigate(['/cabinet']);
+            const userId: number = Number(localStorage.getItem('userId'));
+            router.navigate([`/cabinet/${userId}/home`]);
         }
     }
 
