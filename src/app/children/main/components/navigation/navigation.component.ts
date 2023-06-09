@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class NavigationComponent {
     @Input()
-    public id!: string | null;
+    public id: string | null = null;
 }

@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { IAuthUserResponseModel } from '../response-models/auth-user.response-model.interface';
+import { apiUrl } from '../../../../data/api/api';
 
 @Injectable({
     providedIn: 'root'
@@ -15,7 +16,7 @@ export class AuthService {
     }
 
     public register(user: IAuthUserRequestModel): Observable<IAuthUserResponseModel> {
-        return this._http.post<IAuthUserResponseModel>('http://localhost:3000/register', user)
+        return this._http.post<IAuthUserResponseModel>(`${apiUrl}/register`, user)
             .pipe(
                 tap((response: IAuthUserResponseModel) => {
                     this.setToken(response.accessToken);
@@ -25,7 +26,7 @@ export class AuthService {
     }
 
     public login(user: IAuthUserRequestModel): Observable<IAuthUserResponseModel> {
-        return this._http.post<IAuthUserResponseModel>('https://restful-api-vercel-lake.vercel.app/login', user)
+        return this._http.post<IAuthUserResponseModel>(`${apiUrl}/login`, user)
             .pipe(
                 tap((response: IAuthUserResponseModel) => {
                     this.setToken(response.accessToken);
