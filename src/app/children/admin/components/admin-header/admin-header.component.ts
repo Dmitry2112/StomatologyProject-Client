@@ -3,6 +3,7 @@ import { PatientDataService } from '../../../main/data/services/patient-data.ser
 import { OPEN_NAVIGATION_TOKEN } from '../../../main/data/tokens/open-navigation.token';
 import { BehaviorSubject } from 'rxjs';
 import { IPatientResponseModel } from '../../../main/data/response-models/patient.response-model.interface';
+import { AuthService } from '../../../auth/data/services/auth.service';
 
 @Component({
     selector: 'admin-header',
@@ -15,6 +16,7 @@ export class AdminHeaderComponent implements OnInit {
 
     constructor(
         private _patientDataService: PatientDataService,
+        private _authService: AuthService,
         @Inject(OPEN_NAVIGATION_TOKEN) public openNavigation$: BehaviorSubject<boolean>
     ) {
     }
@@ -28,5 +30,9 @@ export class AdminHeaderComponent implements OnInit {
 
     public openNavigation(): void {
         this.openNavigation$.next(!this.openNavigation$.getValue());
+    }
+
+    public logout(): void {
+        this._authService.logout();
     }
 }

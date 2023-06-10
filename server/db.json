@@ -270,15 +270,15 @@
       ]
     },
     {
-        "email": "admin@mail",
-        "password": "$2a$10$.KztHVlAlbLNpyhu01tKkuZWJY7m851RVjXtVJ7DGNH956ex/KMH2",
-        "id": 5,
-        "photo": "patient-img.svg",
-        "firstName": "Админ",
-        "lastName": "Админов",
-        "patronymic": "Админович",
-        "birthDate": "2002-12-21",
-        "role": "ADMIN"
+      "email": "admin@mail",
+      "password": "$2a$10$.KztHVlAlbLNpyhu01tKkuZWJY7m851RVjXtVJ7DGNH956ex/KMH2",
+      "id": 5,
+      "photo": "patient-img.svg",
+      "firstName": "Админ",
+      "lastName": "Админов",
+      "patronymic": "Админович",
+      "birthDate": "2002-12-21",
+      "role": "ADMIN"
     }
   ]
 }

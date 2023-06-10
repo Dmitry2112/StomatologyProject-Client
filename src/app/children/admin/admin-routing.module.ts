@@ -4,12 +4,13 @@ import { authGuard } from '../auth/guards/auth.guard';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { PatientsPageWebComponent } from './pages/patients-page/patients.page.web.component';
 import { AdminHomePageWebComponent } from './pages/admin-home-page/admin-home.page.web.component';
+import { isAdminGuard } from './guards/isAdmin.guard';
 
 const routes: Routes = [
     {
         path: '',
         component: AdminLayoutComponent,
-        canActivate: [authGuard],
+        canActivate: [authGuard, isAdminGuard],
         children: [
             {
                 path: '',

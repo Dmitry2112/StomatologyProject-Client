@@ -53,6 +53,10 @@
     &__burger-button {
         display: none;
     }
+
+    &__logout-button {
+        cursor: pointer;
+    }
 }
 
 .header__content__user-info p {

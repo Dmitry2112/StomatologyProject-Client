@@ -48,6 +48,9 @@
 .header__burger-button {
   display: none;
 }
+.header__logout-button {
+  cursor: pointer;
+}
 
 .header__content__user-info p {
   padding-left: 10px;
