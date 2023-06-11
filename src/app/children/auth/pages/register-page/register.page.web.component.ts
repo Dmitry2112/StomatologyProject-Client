@@ -5,8 +5,7 @@ import { Subscription } from 'rxjs';
 
 import { AuthService } from '../../data/services/auth.service';
 import { IRegisterForm } from '../../data/interfaces/register-form.interface';
-import { ILoginForm } from '../../data/interfaces/login-form.interface';
-import { IAuthUserRequestModel } from '../../data/request-models/auth-user.request-model.interface';
+import { IAuthUserRegisterRequestModel } from '../../data/request-models/auth-user-register.request-model.interface';
 import { passwordValidator } from '../../validators/password.validator';
 
 @Component({
@@ -20,7 +19,23 @@ export class RegisterPageWebComponent implements OnDestroy {
     private _registerSubscription!: Subscription;
 
     constructor(private _auth: AuthService, private _router: Router) {
-        this.registerForm = new FormGroup<ILoginForm>({
+        this.registerForm = new FormGroup<IRegisterForm>({
+            lastName: new FormControl('', {
+                nonNullable: true,
+                validators: [Validators.required]
+            }),
+            firstName: new FormControl('', {
+                nonNullable: true,
+                validators: [Validators.required]
+            }),
+            patronymic: new FormControl('', {
+                nonNullable: true,
+                validators: [Validators.required]
+            }),
+            birthDate: new FormControl('', {
+                nonNullable: true,
+                validators: [Validators.required]
+            }),
             email: new FormControl('', {
                 nonNullable: true,
                 validators: [Validators.required, Validators.email]
@@ -32,6 +47,10 @@ export class RegisterPageWebComponent implements OnDestroy {
                     Validators.minLength(6),
                     passwordValidator
                 ]
+            }),
+            role: new FormControl('', {
+                nonNullable: true,
+                validators: [Validators.required]
             })
         });
     }
@@ -48,10 +67,34 @@ export class RegisterPageWebComponent implements OnDestroy {
 
             return;
         }
-        const user: IAuthUserRequestModel = {
-            email: this.registerForm.controls.email.value,
-            password: this.registerForm.controls.password.value
-        };
+        let user: IAuthUserRegisterRequestModel;
+        const role: string = this.registerForm.controls.role.value;
+        if (role === 'ADMIN') {
+            user = {
+                lastName: this.registerForm.controls.lastName.value,
+                firstName: this.registerForm.controls.firstName.value,
+                patronymic: this.registerForm.controls.patronymic.value,
+                birthDate: this.registerForm.controls.birthDate.value,
+                email: this.registerForm.controls.email.value,
+                password: this.registerForm.controls.password.value,
+                role: this.registerForm.controls.role.value
+            };
+        } else {
+            user = {
+                lastName: this.registerForm.controls.lastName.value,
+                firstName: this.registerForm.controls.firstName.value,
+                patronymic: this.registerForm.controls.patronymic.value,
+                birthDate: this.registerForm.controls.birthDate.value,
+                email: this.registerForm.controls.email.value,
+                password: this.registerForm.controls.password.value,
+                role: this.registerForm.controls.role.value,
+                therapyList: [],
+                photoDocuments: [],
+                photo: ''
+            };
+        }
+
+        console.log(user);
         this.registerForm.disable();
         this._registerSubscription = this._auth
             .register(user)

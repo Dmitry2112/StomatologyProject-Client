@@ -5,27 +5,84 @@
 >
     <div class="register-form__content">
         <span class="register-form__title">Регистрация</span>
-        <div class="register-form-field">
-            <validation-message [control]="registerForm.controls.email">
-            </validation-message>
-            <input
-                class="register-form-field__input"
-                id="email"
-                type="email"
-                formControlName="email"
-                placeholder="Логин"
-            >
-        </div>
-        <div class="register-form-field">
-            <validation-message [control]="registerForm.controls.password">
-            </validation-message>
-            <input
-                class="register-form-field__input"
-                id="password"
-                type="password"
-                formControlName="password"
-                placeholder="Пароль"
-            >
+        <div class="login-form__inputs-div">
+            <div class="register-form-field">
+                <validation-message [control]="registerForm.controls.lastName">
+                </validation-message>
+                <input
+                    class="register-form-field__input"
+                    id="lastName"
+                    type="text"
+                    formControlName="lastName"
+                    placeholder="Фамилия"
+                >
+            </div>
+            <div class="register-form-field">
+                <validation-message [control]="registerForm.controls.firstName">
+                </validation-message>
+                <input
+                    class="register-form-field__input"
+                    id="firstName"
+                    type="text"
+                    formControlName="firstName"
+                    placeholder="Имя"
+                >
+            </div>
+            <div class="register-form-field">
+                <validation-message [control]="registerForm.controls.patronymic">
+                </validation-message>
+                <input
+                    class="register-form-field__input"
+                    id="patronymic"
+                    type="text"
+                    formControlName="patronymic"
+                    placeholder="Отчество"
+                >
+            </div>
+            <div class="register-form-field">
+                <validation-message [control]="registerForm.controls.birthDate">
+                </validation-message>
+                <input
+                    class="register-form-field__input"
+                    id="birthDate"
+                    type="date"
+                    formControlName="birthDate"
+                    placeholder="Дата рождения"
+                >
+            </div>
+            <div class="register-form-field">
+                <validation-message [control]="registerForm.controls.email">
+                </validation-message>
+                <input
+                    class="register-form-field__input"
+                    id="email"
+                    type="email"
+                    formControlName="email"
+                    placeholder="Логин"
+                >
+            </div>
+            <div class="register-form-field">
+                <validation-message [control]="registerForm.controls.password">
+                </validation-message>
+                <input
+                    class="register-form-field__input"
+                    id="password"
+                    type="password"
+                    formControlName="password"
+                    placeholder="Пароль"
+                >
+            </div>
+            <div class="register-form-field">
+                <validation-message [control]="registerForm.controls.role">
+                </validation-message>
+                <input
+                    class="register-form-field__input"
+                    id="role"
+                    type="text"
+                    formControlName="role"
+                    placeholder="Роль"
+                >
+            </div>
         </div>
     </div>
     <div class="register-form-action">
@@ -33,17 +90,8 @@
             class="register-form-action__button"
             type="submit"
         >
-            Регистрация
+            Зарегистрировать
         </button>
-    </div>
-    <div class="register-form-nav">
-        <a
-            class="register-form-nav__item"
-            routerLink="/auth/login"
-            routerLinkActive="card-nav__item_active"
-        >
-            Войти
-        </a>
     </div>
 </form>
 

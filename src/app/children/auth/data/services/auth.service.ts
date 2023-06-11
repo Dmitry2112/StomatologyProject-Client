@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { IAuthUserRequestModel } from '../request-models/auth-user.request-model.interface';
+import { IAuthUserRegisterRequestModel } from '../request-models/auth-user-register.request-model.interface';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { IAuthUserResponseModel } from '../response-models/auth-user.response-model.interface';
 import { apiUrl } from '../../../../data/api/api';
 import { Router } from '@angular/router';
+import { IAuthUserLoginRequestModel } from '../request-models/auth-user-login.request-model.interface';
 
 @Injectable({
     providedIn: 'root'
@@ -19,11 +20,11 @@ export class AuthService {
     ) {
     }
 
-    public register(user: IAuthUserRequestModel): Observable<IAuthUserResponseModel> {
+    public register(user: IAuthUserRegisterRequestModel): Observable<IAuthUserResponseModel> {
         return this._http.post<IAuthUserResponseModel>(`${apiUrl}/register`, user);
     }
 
-    public login(user: IAuthUserRequestModel): Observable<IAuthUserResponseModel> {
+    public login(user: IAuthUserLoginRequestModel): Observable<IAuthUserResponseModel> {
         return this._http.post<IAuthUserResponseModel>(`${apiUrl}/login`, user)
             .pipe(
                 tap((response: IAuthUserResponseModel) => {
@@ -33,7 +34,6 @@ export class AuthService {
             );
     }
 
-    //TODO: В burger-button сделать кнопку "выйти", она будет использовать эту функцию
     public logout(): void {
         this.removeToken();
         localStorage.clear();

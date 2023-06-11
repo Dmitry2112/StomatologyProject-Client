@@ -1,6 +1,11 @@
 import { FormControl } from '@angular/forms';
 
 export interface IRegisterForm {
-    email: FormControl<string>
-    password: FormControl<string>
+    lastName: FormControl<string>;
+    firstName: FormControl<string>;
+    patronymic: FormControl<string>;
+    birthDate: FormControl<string>;
+    email: FormControl<string>;
+    password: FormControl<string>;
+    role: FormControl<string>;
 }

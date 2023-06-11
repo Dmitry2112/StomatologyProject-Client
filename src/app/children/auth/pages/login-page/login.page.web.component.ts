@@ -5,9 +5,9 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { AuthService } from '../../data/services/auth.service';
 import { ILoginForm } from '../../data/interfaces/login-form.interface';
-import { IAuthUserRequestModel } from '../../data/request-models/auth-user.request-model.interface';
 import { passwordValidator } from '../../validators/password.validator';
 import { IAuthUserResponseModel } from '../../data/response-models/auth-user.response-model.interface';
+import { IAuthUserLoginRequestModel } from '../../data/request-models/auth-user-login.request-model.interface';
 
 
 @Component({
@@ -64,7 +64,7 @@ export class LoginPageWebComponent implements OnInit, OnDestroy {
 
             return;
         }
-        const user: IAuthUserRequestModel = {
+        const user: IAuthUserLoginRequestModel = {
             email: this.loginForm.controls.email.value,
             password: this.loginForm.controls.password.value
         };
