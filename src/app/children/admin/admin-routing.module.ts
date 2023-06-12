@@ -5,6 +5,16 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { PatientsPageWebComponent } from './pages/patients-page/patients.page.web.component';
 import { AdminHomePageWebComponent } from './pages/admin-home-page/admin-home.page.web.component';
 import { isAdminGuard } from './guards/isAdmin.guard';
+import {
+    PatientDetailsHomeWebPageComponent
+} from './pages/patient-details-home-page/patient-details-home.web.page.component';
+import { PatientDetailsLayoutComponent } from './layouts/patient-details-layout/patient-details-layout.component';
+import {
+    PatientDetailsPlanWebPageComponent
+} from './pages/patient-details-plan-page/patient-details-plan.web.page.component';
+import {
+    PatientDetailsPhotodocsWebPageComponent
+} from './pages/patient-details-photodocs-page/patient-details-photodocs.web.page.component';
 
 const routes: Routes = [
     {
@@ -26,6 +36,25 @@ const routes: Routes = [
                 component: PatientsPageWebComponent
             }
         ],
+    },
+    {
+        path: 'patient-details',
+        component: PatientDetailsLayoutComponent,
+        canActivate: [authGuard, isAdminGuard],
+        children: [
+            {
+                path: ':patientId/home',
+                component: PatientDetailsHomeWebPageComponent
+            },
+            {
+                path: ':patientId/plan',
+                component: PatientDetailsPlanWebPageComponent
+            },
+            {
+                path: ':patientId/photodocs',
+                component: PatientDetailsPhotodocsWebPageComponent
+            }
+        ]
     }
 ];
 

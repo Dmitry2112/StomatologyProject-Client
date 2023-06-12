@@ -14,4 +14,8 @@ export class PatientDataService {
     public getPatientData(id: number): Observable<IPatientResponseModel> {
         return this._http.get<IPatientResponseModel>(`${apiUrl}/users/${id}`);
     }
+
+    public getPatients(): Observable<IPatientResponseModel[]> {
+        return this._http.get<IPatientResponseModel[]>(`${apiUrl}/users`);
+    }
 }

@@ -264,6 +264,300 @@
       "patronymic": "Админович",
       "birthDate": "2002-12-21",
       "role": "ADMIN"
+    },
+    {
+      "email": "test_patient@first",
+      "password": "$2a$10$ojYr5NCa5u/hxEp5HuwqVeIwUktxl3oBa///CgDi7hQB0G2W03yta",
+      "lastName": "Иванов",
+      "firstName": "Иван",
+      "patronymic": "Иванович",
+      "birthDate": "2023-05-29",
+      "role": "PATIENT",
+      "therapyList": [
+          {
+              "therapyName": "Установка брекетов",
+              "completedAppointments": [
+                  {
+                      "numberAppointment": "1",
+                      "nameStageTherapy": "Диагностика",
+                      "dateAppointment": "2023-02-27",
+                      "services": [
+                          {
+                              "serviceName": "Фотопротокол",
+                              "price": 2200,
+                              "count": 2,
+                              "cost": 4400,
+                              "doctorProfile": "Ортодонт"
+                          },
+                          {
+                              "serviceName": "Фотопротокол",
+                              "price": 2200,
+                              "count": 2,
+                              "cost": 4400,
+                              "doctorProfile": "Ортодонт"
+                          },
+                          {
+                              "serviceName": "Фотопротокол",
+                              "price": 2200,
+                              "count": 2,
+                              "cost": 4400,
+                              "doctorProfile": "Ортодонт"
+                          },
+                          {
+                              "serviceName": "Фотопротокол",
+                              "price": 2200,
+                              "count": 2,
+                              "cost": 4400,
+                              "doctorProfile": "Ортодонт"
+                          }
+                      ],
+                      "recommendations": "Чистить зубы следует не менее 2-х раз в день, в обязательном порядке - утром после завтрака и вечером перед сном. В целях гигиены желательно использовать щетку из искусственной щетины. Для предотвращения развития бактерий после использования щетку необходимо намылить, а перед использованием - тщательно сполоснуть."
+                  }
+              ],
+              "plannedAppointments": [
+                  {
+                      "numberAppointment": "1",
+                      "nameStageTherapy": "Установка чего-то",
+                      "dateAppointment": "2023-04-27",
+                      "services": [
+                          {
+                              "serviceName": "Супер лечение",
+                              "price": 5200,
+                              "count": 1,
+                              "cost": 5200,
+                              "doctorProfile": "Супер врач"
+                          },
+                          {
+                              "serviceName": "Супер лечение",
+                              "price": 5200,
+                              "count": 1,
+                              "cost": 5200,
+                              "doctorProfile": "Супер врач"
+                          },
+                          {
+                              "serviceName": "Супер лечение",
+                              "price": 5200,
+                              "count": 1,
+                              "cost": 5200,
+                              "doctorProfile": "Супер врач"
+                          },
+                          {
+                              "serviceName": "Супер лечение",
+                              "price": 5200,
+                              "count": 1,
+                              "cost": 5200,
+                              "doctorProfile": "Супер врач"
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "photoDocuments": [
+          {
+              "date": "2023-02-27",
+              "type": "Рентген",
+              "file": "Какой-то файл со снимком"
+          }
+      ],
+      "photo": "",
+      "id": 3
+    },
+    {
+      "email": "test_patient@second",
+      "password": "$2a$10$mB27MpEDUtOuMZ/bHr3BouPnAPpJGjODsMYjxgNYJPbSg5hxhc0SC",
+      "lastName": "Петров",
+      "firstName": "Петр",
+      "patronymic": "Петрович",
+      "birthDate": "2023-06-02",
+      "role": "PATIENT",
+      "therapyList": [
+          {
+              "therapyName": "Установка брекетов",
+              "completedAppointments": [
+                  {
+                      "numberAppointment": "1",
+                      "nameStageTherapy": "Диагностика",
+                      "dateAppointment": "2023-02-27",
+                      "services": [
+                          {
+                              "serviceName": "Фотопротокол",
+                              "price": 2200,
+                              "count": 2,
+                              "cost": 4400,
+                              "doctorProfile": "Ортодонт"
+                          },
+                          {
+                              "serviceName": "Фотопротокол",
+                              "price": 2200,
+                              "count": 2,
+                              "cost": 4400,
+                              "doctorProfile": "Ортодонт"
+                          },
+                          {
+                              "serviceName": "Фотопротокол",
+                              "price": 2200,
+                              "count": 2,
+                              "cost": 4400,
+                              "doctorProfile": "Ортодонт"
+                          },
+                          {
+                              "serviceName": "Фотопротокол",
+                              "price": 2200,
+                              "count": 2,
+                              "cost": 4400,
+                              "doctorProfile": "Ортодонт"
+                          }
+                      ],
+                      "recommendations": "Чистить зубы следует не менее 2-х раз в день, в обязательном порядке - утром после завтрака и вечером перед сном. В целях гигиены желательно использовать щетку из искусственной щетины. Для предотвращения развития бактерий после использования щетку необходимо намылить, а перед использованием - тщательно сполоснуть."
+                  }
+              ],
+              "plannedAppointments": [
+                  {
+                      "numberAppointment": "1",
+                      "nameStageTherapy": "Установка чего-то",
+                      "dateAppointment": "2023-04-27",
+                      "services": [
+                          {
+                              "serviceName": "Супер лечение",
+                              "price": 5200,
+                              "count": 1,
+                              "cost": 5200,
+                              "doctorProfile": "Супер врач"
+                          },
+                          {
+                              "serviceName": "Супер лечение",
+                              "price": 5200,
+                              "count": 1,
+                              "cost": 5200,
+                              "doctorProfile": "Супер врач"
+                          },
+                          {
+                              "serviceName": "Супер лечение",
+                              "price": 5200,
+                              "count": 1,
+                              "cost": 5200,
+                              "doctorProfile": "Супер врач"
+                          },
+                          {
+                              "serviceName": "Супер лечение",
+                              "price": 5200,
+                              "count": 1,
+                              "cost": 5200,
+                              "doctorProfile": "Супер врач"
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "photoDocuments": [
+          {
+              "date": "2023-02-27",
+              "type": "Рентген",
+              "file": "Какой-то файл со снимком"
+          }
+      ],
+      "photo": "",
+      "id": 4
+    },
+    {
+      "email": "test_patient@three",
+      "password": "$2a$10$4iWwkjOwquWcD.MR8edW6OuTM9pJa0GD3gGbYhHeGX01s2g4KYx0u",
+      "lastName": "Цой",
+      "firstName": "Виктор",
+      "patronymic": "Робертович",
+      "birthDate": "2023-02-02",
+      "role": "PATIENT",
+      "therapyList": [
+          {
+              "therapyName": "Установка брекетов",
+              "completedAppointments": [
+                  {
+                      "numberAppointment": "1",
+                      "nameStageTherapy": "Диагностика",
+                      "dateAppointment": "2023-02-27",
+                      "services": [
+                          {
+                              "serviceName": "Фотопротокол",
+                              "price": 2200,
+                              "count": 2,
+                              "cost": 4400,
+                              "doctorProfile": "Ортодонт"
+                          },
+                          {
+                              "serviceName": "Фотопротокол",
+                              "price": 2200,
+                              "count": 2,
+                              "cost": 4400,
+                              "doctorProfile": "Ортодонт"
+                          },
+                          {
+                              "serviceName": "Фотопротокол",
+                              "price": 2200,
+                              "count": 2,
+                              "cost": 4400,
+                              "doctorProfile": "Ортодонт"
+                          },
+                          {
+                              "serviceName": "Фотопротокол",
+                              "price": 2200,
+                              "count": 2,
+                              "cost": 4400,
+                              "doctorProfile": "Ортодонт"
+                          }
+                      ],
+                      "recommendations": "Чистить зубы следует не менее 2-х раз в день, в обязательном порядке - утром после завтрака и вечером перед сном. В целях гигиены желательно использовать щетку из искусственной щетины. Для предотвращения развития бактерий после использования щетку необходимо намылить, а перед использованием - тщательно сполоснуть."
+                  }
+              ],
+              "plannedAppointments": [
+                  {
+                      "numberAppointment": "1",
+                      "nameStageTherapy": "Установка чего-то",
+                      "dateAppointment": "2023-04-27",
+                      "services": [
+                          {
+                              "serviceName": "Супер лечение",
+                              "price": 5200,
+                              "count": 1,
+                              "cost": 5200,
+                              "doctorProfile": "Супер врач"
+                          },
+                          {
+                              "serviceName": "Супер лечение",
+                              "price": 5200,
+                              "count": 1,
+                              "cost": 5200,
+                              "doctorProfile": "Супер врач"
+                          },
+                          {
+                              "serviceName": "Супер лечение",
+                              "price": 5200,
+                              "count": 1,
+                              "cost": 5200,
+                              "doctorProfile": "Супер врач"
+                          },
+                          {
+                              "serviceName": "Супер лечение",
+                              "price": 5200,
+                              "count": 1,
+                              "cost": 5200,
+                              "doctorProfile": "Супер врач"
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "photoDocuments": [
+          {
+              "date": "2023-02-27",
+              "type": "Рентген",
+              "file": "Какой-то файл со снимком"
+          }
+      ],
+      "photo": "",
+      "id": 5
     }
   ]
 }

@@ -1,1 +1,40 @@
-Список пациенкто павпвапвапвапвапвап
+<div class="patients">
+    <div
+        class="patients-table"
+        *ngIf="patients"
+    >
+        <ng-container *ngFor="let patient of patients">
+            <div class="patients-table__element">
+                {{ patient.lastName + ' ' + patient.firstName + ' ' + patient.patronymic}}
+            </div>
+            <div class="patients-table__element">
+                {{ patient.birthDate }}
+            </div>
+            <div class="patients-table__element patients-table__element_link">
+                <a
+                    class="patients-table__link"
+                    routerLink="../patient-details/{{ patient.id }}/home"
+                >
+                    Профиль
+                </a>
+            </div>
+            <div class="patients-table__element patients-table__element_link">
+                <a
+                    class="patients-table__link"
+                    routerLink="../patient-details/{{ patient.id }}/plan"
+                >
+                    План лечения
+                </a>
+            </div>
+            <div class="patients-table__element patients-table__element_link">
+                <a
+                    class="patients-table__link"
+                    routerLink="../patient-details/{{ patient.id }}/photodocs"
+                >
+                    Фотодокументы
+                </a>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<router-outlet></router-outlet>
