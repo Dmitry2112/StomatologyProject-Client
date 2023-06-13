@@ -1,0 +1,51 @@
+<form
+    class="patient-form"
+    [formGroup]="patientForm"
+    *ngIf="patientFormData$ | async"
+    (ngSubmit)="onSubmit()"
+>
+    <div
+        class="patient-form__close-button"
+        (click)="close()"
+    >
+        <img class="cross-img" src="assets/images/close-button.svg" alt="закрыть">
+    </div>
+    <div class="patient-form__body">
+        <div class="patient-form__content">
+            <div class="patient-form__patient-data" formArrayName="patientFormFields">
+                <ng-container *ngFor="let patientFormField of patientFormFields.controls; index as i">
+                    <label class="patient-form__label" for="field">{{ patientFormLabels[i] }}</label>
+                    <input
+                        class="patient-form__data"
+                        id="field"
+                        type="{{ patientFormControlTypes[i] }}"
+                        formControlName="{{ i }}"
+                    >
+                </ng-container>
+            </div>
+            <div class="patient-form__patient-photo" *ngIf="patientPhoto">
+                <img src="assets/images/{{ patientPhoto }}" alt="фото пациента">
+            </div>
+        </div>
+        <div
+            class="patient-form__error-text"
+            *ngIf="patientForm.invalid && patientForm.touched"
+        >
+            Пожалуйста, заполните все поля формы корректными данными
+        </div>
+        <div
+            class="patient-form__good-text"
+            *ngIf="patientForm.valid && patientForm.touched"
+        >
+            Ваша форма корректно заполнена!
+        </div>
+    </div>
+
+    <button
+        class="patient-form__submit-button"
+        type="submit"
+    >
+        Сохранить изменения
+    </button>
+</form>
+

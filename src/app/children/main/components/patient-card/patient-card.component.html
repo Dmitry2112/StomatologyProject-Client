@@ -33,4 +33,11 @@
             </div>
         </div>
     </div>
+    <div
+        class="patient-card__edit-button"
+        (click)="edit()"
+        *ngIf="canEdit"
+    >
+        <img src="assets/images/edit-button.svg" alt="редактировать">
+    </div>
 </div>

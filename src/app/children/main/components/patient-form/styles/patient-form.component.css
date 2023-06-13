@@ -1,0 +1,122 @@
+.patient-form {
+  width: 957px;
+  padding: 50px 50px 65px;
+  position: relative;
+  background-color: #F0F0F0;
+}
+.patient-form__body {
+  display: flex;
+}
+.patient-form__title {
+  font-size: 28px;
+  line-height: 34px;
+  margin-bottom: 19px;
+}
+.patient-form__content {
+  width: 857px;
+  display: flex;
+  justify-content: space-between;
+}
+.patient-form__patient-data {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  row-gap: 25px;
+  column-gap: 30px;
+}
+.patient-form__label {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+.patient-form__data {
+  font-size: 20px;
+  line-height: 24px;
+  border-radius: 3px;
+  border: none;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+.patient-form__patient-photo {
+  width: 155px;
+  height: 211px;
+}
+.patient-form__close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F0F0F0;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  right: 0;
+  top: -50px;
+  position: absolute;
+  transition-duration: 0.2s;
+}
+.patient-form__close-button:hover {
+  opacity: 0.7;
+}
+.patient-form__close-button:active {
+  opacity: 0.3;
+}
+.patient-form__submit-button {
+  font-size: 24px;
+  line-height: 29px;
+  width: 275px;
+  height: 43px;
+  padding: 7px;
+  border-radius: 3px;
+  border: none;
+  right: 0;
+  bottom: -50px;
+  position: absolute;
+  transition-duration: 0.2s;
+}
+.patient-form__submit-button:hover {
+  background-color: #507CB1;
+  color: white;
+}
+.patient-form__submit-button:active {
+  opacity: 0.8;
+  background-color: #507CB1;
+  color: white;
+}
+.patient-form__error-text {
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 24px;
+  color: red;
+}
+.patient-form__good-text {
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 24px;
+  color: green;
+}
+
+.cross-img {
+  display: block;
+}
+
+@media screen and (max-width: 895px) {
+  .patient-form {
+    width: 100%;
+    padding: 25px;
+  }
+  .patient-form__content {
+    width: 100%;
+    flex-direction: column;
+  }
+  .patient-form__patient-data {
+    grid-template-columns: 100%;
+    row-gap: 15px;
+  }
+  .patient-form__submit-button {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=patient-form.component.css.map */

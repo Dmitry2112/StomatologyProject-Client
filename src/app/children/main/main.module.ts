@@ -16,6 +16,9 @@ import { AppointmentComponent } from './components/appointment/appointment.compo
 import { PhotodocsComponent } from './components/photodocs/photodocs.component';
 import { OPEN_NAVIGATION_TOKEN } from './data/tokens/open-navigation.token';
 import { BehaviorSubject } from 'rxjs';
+import { PatientFormComponent } from './components/patient-form/patient-form.component';
+import { UpdateDataService } from './services/update-data.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -30,14 +33,21 @@ import { BehaviorSubject } from 'rxjs';
         MainFooterComponent,
         TherapyListComponent,
         AppointmentComponent,
-        PhotodocsComponent
+        PhotodocsComponent,
+        PatientFormComponent
     ],
     imports: [
         CommonModule,
         RouterModule,
+        ReactiveFormsModule
+    ],
+    exports: [
+        PatientCardComponent,
+        PatientFormComponent,
     ],
     providers: [
         PatientDataService,
+        UpdateDataService,
         {
             provide: OPEN_NAVIGATION_TOKEN,
             useValue: new BehaviorSubject<boolean>(false)

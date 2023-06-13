@@ -1,0 +1,140 @@
+.patient-form {
+    width: 957px;
+    padding: 50px 50px 65px;
+    position: relative;
+    background-color: #F0F0F0;
+
+    &__body {
+        display: flex;
+    }
+
+    &__title {
+        font-size: 28px;
+        line-height: 34px;
+        margin-bottom: 19px;
+    }
+
+
+    &__content {
+        width: 857px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__patient-data {
+        display: grid;
+        grid-template-columns: 1fr 2.5fr;
+        row-gap: 25px;
+        column-gap: min(30px);
+    }
+
+    &__label {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+    }
+
+    &__data {
+        font-size: 20px;
+        line-height: 24px;
+        border-radius: 3px;
+        border: none;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+
+    &__patient-photo {
+        width: 155px;
+        height: 211px;
+    }
+
+    &__close-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F0F0F0;
+        width: 40px;
+        height: 40px;
+        border-radius: 3px;
+        right: 0;
+        top: -50px;
+        position: absolute;
+        transition-duration: 0.2s;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:active {
+            opacity: 0.3;
+        }
+    }
+
+    &__submit-button {
+        font-size: 24px;
+        line-height: 29px;
+        width: 275px;
+        height: 43px;
+        padding: 7px;
+        border-radius: 3px;
+        border: none;
+        right: 0;
+        bottom: -50px;
+        position: absolute;
+        transition-duration: 0.2s;
+
+        &:hover {
+            background-color: #507CB1;
+            color: white;
+        }
+
+        &:active {
+            opacity: 0.8;
+            background-color: #507CB1;
+            color: white;
+        }
+    }
+
+    &__error-text {
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 24px;
+        color: red;
+    }
+
+    &__good-text {
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 24px;
+        color: green;
+    }
+}
+
+.cross-img {
+    display: block;
+}
+
+@media screen and (max-width: 895px) {
+    .patient-form {
+        width: 100%;
+        padding: 25px;
+
+
+        &__content {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        &__patient-data {
+            grid-template-columns: 100%;
+            row-gap: 15px;
+        }
+
+        &__submit-button {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<div class="popup" [ngClass]="{ popup_open: isOpenINP }" (click)="close($event)">
+    <div class="popup__body" id="popup-id">
+        <div
+            class="popup__content"
+        >
+            <patient-form (isOpen)="close($event)">
+            </patient-form>
+        </div>
+    </div>
+</div>

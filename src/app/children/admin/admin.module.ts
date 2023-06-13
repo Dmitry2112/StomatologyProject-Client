@@ -22,6 +22,10 @@ import {
 import {
     PatientDetailsPhotodocsWebPageComponent
 } from './pages/patient-details-photodocs-page/patient-details-photodocs.web.page.component';
+import { MainModule } from '../main/main.module';
+import { PopupComponent } from './components/popup/popup.component';
+import { PATIENT_FORM_DATA_TOKEN } from '../main/data/tokens/employee-form-data.token';
+import { IPatientFormData } from '../main/data/interfaces/patient-form-data.interface';
 
 @NgModule({
     declarations: [
@@ -36,17 +40,23 @@ import {
         PatientDetailsHomeWebPageComponent,
         PatientDetailsLayoutComponent,
         PatientDetailsPlanWebPageComponent,
-        PatientDetailsPhotodocsWebPageComponent
+        PatientDetailsPhotodocsWebPageComponent,
+        PopupComponent
     ],
     imports: [
         CommonModule,
         RouterModule,
+        MainModule,
     ],
     providers: [
         AdminDataService,
         {
             provide: OPEN_NAVIGATION_TOKEN,
             useValue: new BehaviorSubject<boolean>(false)
+        },
+        {
+            provide: PATIENT_FORM_DATA_TOKEN,
+            useValue: new BehaviorSubject<IPatientFormData | null>(null)
         }
     ]
 })
