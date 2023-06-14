@@ -4,9 +4,6 @@
   position: relative;
   background-color: #F0F0F0;
 }
-.patient-form__body {
-  display: flex;
-}
 .patient-form__title {
   font-size: 28px;
   line-height: 34px;
