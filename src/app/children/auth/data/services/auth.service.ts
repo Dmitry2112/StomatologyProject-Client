@@ -21,7 +21,7 @@ export class AuthService {
     }
 
     public register(user: IAuthUserRegisterRequestModel): Observable<IAuthUserResponseModel> {
-        return this._http.post<IAuthUserResponseModel>(`${apiUrl}/users`, user);
+        return this._http.post<IAuthUserResponseModel>(`${apiUrl}/register`, user);
     }
 
     public login(user: IAuthUserLoginRequestModel): Observable<IAuthUserResponseModel> {
