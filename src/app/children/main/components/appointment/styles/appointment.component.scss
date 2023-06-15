@@ -76,6 +76,51 @@
         padding-bottom: 5px;
     }
 
+    &__button-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__icon {
+        width: 18.75px;
+        height: 18.75px;
+        margin-right: 8px;
+    }
+
+    &__add-button {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        line-height: 20px;
+        border: 0.7px solid #B11261;
+        border-radius: 4px;
+        width: 200px;
+        padding: 6px 15px;
+        margin-top: 15px;
+        transition-duration: 0.2s;
+
+        &:hover {
+            transform: scale(1.025);
+        }
+
+        &_hide {
+            display: none;
+        }
+    }
+
+    &__delete-button {
+        cursor: pointer;
+        margin-left: 10px;
+        margin-top: 5px;
+        transition-duration: 0.2s;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
     &__recommendations {
         color: #B11261;
         background-color: rgba(214, 51, 132, 0.14);
@@ -112,6 +157,88 @@
     }
 }
 
+.service-add-form {
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+    }
+
+    &__data {
+        width: 100%;
+        font-size: 20px;
+        line-height: 24px;
+        border-radius: 3px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+
+    &__action {
+        display: flex;
+    }
+
+    &__cancel-button {
+        font-size: 16px;
+        line-height: 20px;
+        width: 100px;
+        height: 25px;
+        border-radius: 3px;
+        margin-top: 10px;
+        border: solid 0.5px;
+
+        &:hover {
+            opacity: 0.7;
+            transition-duration: 0.2s;
+        }
+
+        &:active {
+            opacity: 0.4;
+        }
+    }
+
+    &__submit-button {
+        font-size: 16px;
+        line-height: 20px;
+        width: 100px;
+        height: 25px;
+        border-radius: 3px;
+        right: 0;
+        position: absolute;
+        margin-top: 10px;
+        background-color: #202124;
+        color: white;
+        border: none;
+
+        &:hover {
+            opacity: 0.7;
+            transition-duration: 0.2s;
+        }
+
+        &:active {
+            opacity: 0.4;
+        }
+    }
+
+    &__error-text {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 18px;
+        color: red;
+    }
+
+    &__good-text {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 18px;
+        color: green;
+    }
+}
+
 .appointment-recommendations {
     font-family: Roboto, sans-serif;
     font-size: 20px;
@@ -122,6 +249,7 @@
     margin-bottom: 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
 
     &__title {
@@ -159,5 +287,96 @@
         line-height: 37px;
         padding-left: 41px;
         padding-right: 56px;
+    }
+
+    &__container-for-edit {
+        display: flex;
+        align-items: center;
+    }
+
+    &__edit-button {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        transition-duration: 0.3s;
+        margin-left: 20px;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:active {
+            opacity: 0.3;
+        }
+
+        &_hide {
+            display: none;
+        }
+    }
+}
+
+.update-recommendations-form {
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+
+    &__container {
+
+    }
+
+    &__data {
+        width: 100%;
+        font-size: 20px;
+        line-height: 24px;
+        border-radius: 3px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+
+    &__action {
+        display: flex;
+    }
+
+    &__cancel-button {
+        font-size: 16px;
+        line-height: 20px;
+        width: 100px;
+        height: 25px;
+        border-radius: 3px;
+        margin-top: 10px;
+        border: solid 0.5px;
+
+        &:hover {
+            opacity: 0.7;
+            transition-duration: 0.2s;
+        }
+
+        &:active {
+            opacity: 0.4;
+        }
+    }
+
+    &__submit-button {
+        font-size: 16px;
+        line-height: 20px;
+        width: 100px;
+        height: 25px;
+        border-radius: 3px;
+        right: 0;
+        position: absolute;
+        margin-top: 10px;
+        background-color: #202124;
+        color: white;
+        border: none;
+
+        &:hover {
+            opacity: 0.7;
+            transition-duration: 0.2s;
+        }
+
+        &:active {
+            opacity: 0.4;
+        }
     }
 }

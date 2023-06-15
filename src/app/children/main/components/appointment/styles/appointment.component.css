@@ -67,6 +67,44 @@
   padding-top: 5px;
   padding-bottom: 5px;
 }
+.appointment-info__button-container {
+  display: flex;
+  justify-content: center;
+}
+.appointment-info__icon {
+  width: 18.75px;
+  height: 18.75px;
+  margin-right: 8px;
+}
+.appointment-info__add-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 20px;
+  border: 0.7px solid #B11261;
+  border-radius: 4px;
+  width: 200px;
+  padding: 6px 15px;
+  margin-top: 15px;
+  transition-duration: 0.2s;
+}
+.appointment-info__add-button:hover {
+  transform: scale(1.025);
+}
+.appointment-info__add-button_hide {
+  display: none;
+}
+.appointment-info__delete-button {
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 5px;
+  transition-duration: 0.2s;
+}
+.appointment-info__delete-button:hover {
+  opacity: 0.7;
+}
 .appointment-info__recommendations {
   color: #B11261;
   background-color: rgba(214, 51, 132, 0.14);
@@ -100,6 +138,77 @@
   margin-right: 15px;
 }
 
+.service-add-form {
+  width: 100%;
+  position: relative;
+  margin-top: 10px;
+}
+.service-add-form__container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+.service-add-form__data {
+  width: 100%;
+  font-size: 20px;
+  line-height: 24px;
+  border-radius: 3px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+.service-add-form__action {
+  display: flex;
+}
+.service-add-form__cancel-button {
+  font-size: 16px;
+  line-height: 20px;
+  width: 100px;
+  height: 25px;
+  border-radius: 3px;
+  margin-top: 10px;
+  border: solid 0.5px;
+}
+.service-add-form__cancel-button:hover {
+  opacity: 0.7;
+  transition-duration: 0.2s;
+}
+.service-add-form__cancel-button:active {
+  opacity: 0.4;
+}
+.service-add-form__submit-button {
+  font-size: 16px;
+  line-height: 20px;
+  width: 100px;
+  height: 25px;
+  border-radius: 3px;
+  right: 0;
+  position: absolute;
+  margin-top: 10px;
+  background-color: #202124;
+  color: white;
+  border: none;
+}
+.service-add-form__submit-button:hover {
+  opacity: 0.7;
+  transition-duration: 0.2s;
+}
+.service-add-form__submit-button:active {
+  opacity: 0.4;
+}
+.service-add-form__error-text {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  color: red;
+}
+.service-add-form__good-text {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  color: green;
+}
+
 .appointment-recommendations {
   font-family: Roboto, sans-serif;
   font-size: 20px;
@@ -110,6 +219,7 @@
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
 }
 .appointment-recommendations__title {
@@ -142,6 +252,80 @@
   line-height: 37px;
   padding-left: 41px;
   padding-right: 56px;
+}
+.appointment-recommendations__container-for-edit {
+  display: flex;
+  align-items: center;
+}
+.appointment-recommendations__edit-button {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  margin-left: 20px;
+}
+.appointment-recommendations__edit-button:hover {
+  opacity: 0.7;
+}
+.appointment-recommendations__edit-button:active {
+  opacity: 0.3;
+}
+.appointment-recommendations__edit-button_hide {
+  display: none;
+}
+
+.update-recommendations-form {
+  width: 100%;
+  position: relative;
+  margin-top: 10px;
+}
+.update-recommendations-form__data {
+  width: 100%;
+  font-size: 20px;
+  line-height: 24px;
+  border-radius: 3px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+.update-recommendations-form__action {
+  display: flex;
+}
+.update-recommendations-form__cancel-button {
+  font-size: 16px;
+  line-height: 20px;
+  width: 100px;
+  height: 25px;
+  border-radius: 3px;
+  margin-top: 10px;
+  border: solid 0.5px;
+}
+.update-recommendations-form__cancel-button:hover {
+  opacity: 0.7;
+  transition-duration: 0.2s;
+}
+.update-recommendations-form__cancel-button:active {
+  opacity: 0.4;
+}
+.update-recommendations-form__submit-button {
+  font-size: 16px;
+  line-height: 20px;
+  width: 100px;
+  height: 25px;
+  border-radius: 3px;
+  right: 0;
+  position: absolute;
+  margin-top: 10px;
+  background-color: #202124;
+  color: white;
+  border: none;
+}
+.update-recommendations-form__submit-button:hover {
+  opacity: 0.7;
+  transition-duration: 0.2s;
+}
+.update-recommendations-form__submit-button:active {
+  opacity: 0.4;
 }
 
 /*# sourceMappingURL=appointment.component.css.map */

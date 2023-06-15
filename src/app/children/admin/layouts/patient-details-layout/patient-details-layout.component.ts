@@ -32,6 +32,11 @@ export class PatientDetailsLayoutComponent implements OnInit {
                 link: `${patientId}/photodocs`,
                 imgSrc: 'gallery.svg',
                 title: 'Фотодокументы'
+            },
+            {
+                link: `../patient-list`,
+                imgSrc: 'backspace-arrow.svg',
+                title: 'Вернуться к списку пациентов'
             }
         ];
     }

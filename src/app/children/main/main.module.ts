@@ -44,6 +44,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     exports: [
         PatientCardComponent,
         PatientFormComponent,
+        TherapyListComponent,
+        AppointmentComponent,
     ],
     providers: [
         PatientDataService,

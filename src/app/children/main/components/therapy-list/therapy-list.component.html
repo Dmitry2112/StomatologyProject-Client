@@ -9,9 +9,84 @@
             </div>
             <ng-container *ngFor="let completedAppointment of therapyData.completedAppointments">
                 <div class="completed-appointments">
-                    <appointment [appointmentData]="completedAppointment"></appointment>
+                    <appointment
+                        [appointmentData]="completedAppointment"
+                        [canEdit]="canEdit"
+                    >
+                    </appointment>
+                    <div class="completed-appointments__delete-button-container">
+                        <div
+                            class="completed-appointments__delete-button"
+                            (click)="delete(completedAppointment.id, completedAppointment.dateAppointment)"
+                            *ngIf="canEdit"
+                        >
+                            <img
+                                class="completed-appointments__delete-button-icon"
+                                src="assets/images/delete-button.svg"
+                                alt="удалить"
+                            >
+                            <span class="completed-appointments__delete-button-text">Удалить этап</span>
+                        </div>
+                    </div>
+
                 </div>
             </ng-container>
+
+            <form
+                class="add-appointment-form"
+                [formGroup]="addAppointmentForm"
+                (ngSubmit)="onSubmit()"
+                *ngIf="showCompletedAppointmentsForm"
+            >
+                <div class="add-appointment-form__container">
+                    <input
+                        class="add-appointment-form__data"
+                        type="number"
+                        formControlName="numberAppointment"
+                    >
+                    <input
+                        class="add-appointment-form__data"
+                        type="text"
+                        formControlName="nameStageTherapy"
+                    >
+                    <input
+                        class="add-appointment-form__data"
+                        type="date"
+                        formControlName="dateAppointment"
+                    >
+                </div>
+                <div class="add-appointment-form__action">
+                    <button
+                        class="add-appointment-form__cancel-button"
+                        type="button"
+                        (click)="cancelCompletedAppointments()"
+                    >
+                        Отмена
+                    </button>
+
+                    <button
+                        class="add-appointment-form__submit-button"
+                        type="submit"
+                    >
+                        Сохранить
+                    </button>
+                </div>
+            </form>
+
+            <div class="therapy__button-container">
+                <div
+                    class="therapy__add-button"
+                    (click)="addCompletedAppointments()"
+                    *ngIf="canEdit"
+                    [ngClass]="{'therapy__add-button_hide': showCompletedAppointmentsForm}"
+                >
+                    <img
+                        class="therapy__icon"
+                        src="/assets/images/add-button.svg"
+                        alt="кнопка добавить">
+                    <p class="therapy__name">Добавить этап</p>
+                </div>
+            </div>
 
             <hr>
             <div class="appointment-title">
@@ -19,9 +94,83 @@
             </div>
             <ng-container *ngFor="let plannedAppointment of therapyData.plannedAppointments">
                 <div class="planned-appointments">
-                    <appointment [appointmentData]="plannedAppointment"></appointment>
+                    <appointment
+                        [appointmentData]="plannedAppointment"
+                        [canEdit]="canEdit"
+                    >
+                    </appointment>
+                    <div class="completed-appointments__delete-button-container">
+                        <div
+                            class="completed-appointments__delete-button"
+                            (click)="delete(plannedAppointment.id, plannedAppointment.dateAppointment)"
+                            *ngIf="canEdit"
+                        >
+                            <img
+                                class="completed-appointments__delete-button-icon"
+                                src="assets/images/delete-button.svg"
+                                alt="удалить"
+                            >
+                            <span class="completed-appointments__delete-button-text">Удалить этап</span>
+                        </div>
+                    </div>
                 </div>
             </ng-container>
+
+            <form
+                class="add-appointment-form"
+                [formGroup]="addAppointmentForm"
+                (ngSubmit)="onSubmit()"
+                *ngIf="showPlannedAppointmentsForm"
+            >
+                <div class="add-appointment-form__container">
+                    <input
+                        class="add-appointment-form__data"
+                        type="number"
+                        formControlName="numberAppointment"
+                    >
+                    <input
+                        class="add-appointment-form__data"
+                        type="text"
+                        formControlName="nameStageTherapy"
+                    >
+                    <input
+                        class="add-appointment-form__data"
+                        type="date"
+                        formControlName="dateAppointment"
+                    >
+                </div>
+                <div class="add-appointment-form__action">
+                    <button
+                        class="add-appointment-form__cancel-button"
+                        type="button"
+                        (click)="cancelPlannedAppointments()"
+                    >
+                        Отмена
+                    </button>
+
+                    <button
+                        class="add-appointment-form__submit-button"
+                        type="submit"
+                    >
+                        Сохранить
+                    </button>
+                </div>
+            </form>
+
+            <div class="therapy__button-container">
+                <div
+                    class="therapy__add-button"
+                    (click)="addPlannedAppointments()"
+                    *ngIf="canEdit"
+                    [ngClass]="{'therapy__add-button_hide': showPlannedAppointmentsForm}"
+                >
+                    <img
+                        class="therapy__icon"
+                        src="/assets/images/add-button.svg"
+                        alt="кнопка добавить">
+                    <p class="therapy__name">Добавить этап</p>
+                </div>
+            </div>
         </div>
     </ng-container>
 </div>

@@ -1,3 +1,12 @@
-
+.plan {
+  margin-top: 82px;
+}
+.plan__title {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 60px;
+  color: #202124;
+}
 
 /*# sourceMappingURL=patient-details-plan.web.page.component.css.map */

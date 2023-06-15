@@ -1,4 +1,5 @@
 export interface IService {
+    id: number
     serviceName: string,
     price: number,
     count: number,

@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"patient-details-plan.web.page.component.css"}
+{"version":3,"sourceRoot":"","sources":["patient-details-plan.web.page.component.scss"],"names":[],"mappings":"AAAA;EACI;;AAEA;EACI;EACA;EACA;EACA;EACA","file":"patient-details-plan.web.page.component.css"}
