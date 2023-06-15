@@ -659,7 +659,7 @@
     },
     {
       "email": "pat@pat",
-      "password": "$2a$10$mN5bElbZP.Ey8YQAwO4SG.Wn2H0kJWSlpnarFY4rlOVtVFYGWMUd2",
+      "password": "$2a$10$T.UvCTqWIEhW./EkAY0wGuI.ygFym6ELlTIndolkrzPTznlZRLPrC",
       "lastName": "Генадьев",
       "firstName": "Генадий",
       "patronymic": "Генадьевич",
@@ -706,14 +706,6 @@
                   "count": 2,
                   "cost": 4400,
                   "doctorProfile": "Ортодонт"
-                },
-                {
-                  "id": 7,
-                  "serviceName": "пвапв",
-                  "price": 100,
-                  "count": 2,
-                  "cost": 200,
-                  "doctorProfile": "вапвпв"
                 }
               ],
               "recommendations": "Чистить зубы следует не менее 2-х раз в день, в обязательном порядке - утром после завтрака и вечером перед сном. В целях гигиены желательно использовать щетку из искусственной щетины. Для предотвращения развития бактерий после использования щетку необходимо намылить, а перед использованием - тщательно сполоснуть."
