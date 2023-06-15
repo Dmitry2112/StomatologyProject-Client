@@ -94,7 +94,6 @@ export class RegisterPageWebComponent implements OnDestroy {
             };
         }
 
-        console.log(user);
         this.registerForm.disable();
         this._registerSubscription = this._auth
             .register(user)
