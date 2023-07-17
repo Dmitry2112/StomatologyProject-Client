@@ -17,7 +17,8 @@ const components: any[] = [
     RegisterPageWebComponent,
     AuthLayoutWebComponent,
     AuthHeaderComponent,
-    FooterComponent
+    FooterComponent,
+
 ];
 
 @NgModule({
