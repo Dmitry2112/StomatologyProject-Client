@@ -24,8 +24,9 @@ import {
 } from './pages/patient-details-photodocs-page/patient-details-photodocs.web.page.component';
 import { MainModule } from '../main/main.module';
 import { PopupComponent } from './components/popup/popup.component';
-import { PATIENT_FORM_DATA_TOKEN } from '../main/data/tokens/employee-form-data.token';
-import { IPatientFormData } from '../main/data/interfaces/patient-form-data.interface';
+import { PATIENT_FORM_DATA_TOKEN } from '../main/children/patient/data/tokens/patient-form-data.token';
+import { IPatientFormData } from '../main/children/patient/data/interfaces/patient-form-data.interface';
+import { PatientModule } from '../main/children/patient/patient.module';
 
 @NgModule({
     declarations: [
@@ -47,6 +48,7 @@ import { IPatientFormData } from '../main/data/interfaces/patient-form-data.inte
         CommonModule,
         RouterModule,
         MainModule,
+        PatientModule,
     ],
     providers: [
         AdminDataService,

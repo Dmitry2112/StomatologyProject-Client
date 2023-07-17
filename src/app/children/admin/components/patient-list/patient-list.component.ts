@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { PatientDataService } from '../../../main/data/services/patient-data.service';
-import { IPatientResponseModel } from '../../../main/data/response-models/patient.response-model.interface';
+import { PatientDataService } from '../../../main/children/patient/data/services/patient-data.service';
+import { IPatientResponseModel } from '../../../main/children/patient/data/response-models/patient.response-model.interface';
 
 @Component({
     selector: 'patient-list',

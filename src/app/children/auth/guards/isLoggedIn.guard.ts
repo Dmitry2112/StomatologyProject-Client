@@ -12,7 +12,7 @@ export const isLoggedInGuard: CanActivateFn = () => {
             return true;
         } else {
             const userId: number = Number(localStorage.getItem('userId'));
-            router.navigate([`/cabinet/${userId}/home`]);
+            router.navigate([`/cabinet/patient/${userId}/home`]);
         }
     }
 

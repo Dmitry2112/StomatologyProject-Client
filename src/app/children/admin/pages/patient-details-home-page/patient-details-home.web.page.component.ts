@@ -1,12 +1,12 @@
 import { ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { PatientModel } from '../../../main/data/models/patient.model';
-import { PatientViewModel } from '../../../main/view-models/patient.view-model';
-import { PatientDataService } from '../../../main/data/services/patient-data.service';
-import { IPatientResponseModel } from '../../../main/data/response-models/patient.response-model.interface';
+import { PatientModel } from '../../../main/children/patient/data/models/patient.model';
+import { PatientViewModel } from '../../../main/children/patient/view-models/patient.view-model';
+import { PatientDataService } from '../../../main/children/patient/data/services/patient-data.service';
+import { IPatientResponseModel } from '../../../main/children/patient/data/response-models/patient.response-model.interface';
 import { BehaviorSubject, Subscription } from 'rxjs';
-import { PATIENT_FORM_DATA_TOKEN } from '../../../main/data/tokens/employee-form-data.token';
-import { IPatientFormData } from '../../../main/data/interfaces/patient-form-data.interface';
+import { PATIENT_FORM_DATA_TOKEN } from '../../../main/children/patient/data/tokens/patient-form-data.token';
+import { IPatientFormData } from '../../../main/children/patient/data/interfaces/patient-form-data.interface';
 import { UpdateDataService } from '../../../main/services/update-data.service';
 import { FormControl, Validators } from '@angular/forms';
 
