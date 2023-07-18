@@ -15,7 +15,7 @@ export class PatientDetailsLayoutComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        const patientId: string = window.location.pathname.split('/')[3];
+        const patientId: string = window.location.pathname.split('/')[4];
         this.navigationData = [
             {
                 link: `${patientId}/home`,

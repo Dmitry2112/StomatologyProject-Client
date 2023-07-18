@@ -56,7 +56,6 @@ export class TherapyListComponent implements OnInit {
         this._routeSubscription = this._route.params.subscribe((params: Params) => {
             this._patientId = params['patientId'];
         });
-
         this.getTherapyList();
     }
 

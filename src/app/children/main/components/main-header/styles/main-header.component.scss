@@ -6,6 +6,8 @@
     padding: 0 44px;
     border-bottom: 1px solid #D9D9D9;
     background: white;
+    display: flex;
+    align-items: center;
 
     &__content {
         height: 100%;
@@ -28,6 +30,10 @@
 
     &__user-img {
         margin-right: 15px;
+    }
+
+    &__user-name {
+        padding-left: 10px;
     }
 
     &__FAQ {
@@ -57,11 +63,8 @@
 
     &__logout-button {
         cursor: pointer;
+        margin-left: 2.5%;
     }
-}
-
-.header__content__user-info p {
-    padding-left: 10px;
 }
 
 @media screen and (max-width: 895px) {
@@ -72,7 +75,6 @@
         &__content {
             flex-direction: row-reverse;
             padding: 0 3%;
-
         }
 
         &__FAQ{
@@ -84,13 +86,14 @@
             background: #FFFFFF;
             border: none;
         }
-    }
-    .header .logo {
-        width: 150px;
-        height: 20.96px;
+
+        &__user-name {
+            display: none;
+        }
     }
 
-    p {
-        display: none;
+    .logo {
+        width: 150px;
+        height: 20.96px;
     }
 }
