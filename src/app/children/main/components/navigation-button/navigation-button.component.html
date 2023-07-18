@@ -1,4 +1,8 @@
-<a class="navigation-button" routerLink="{{routLink}}">
+<a
+    class="navigation-button"
+    routerLink="{{routLink}}"
+    (click)="closeNavigation()"
+>
     <div class="navigation-button__content">
         <img src="{{iconSrc}}" class="navigation-button__icon" alt="">
         <p class="navigation-button__name">{{name}}</p>

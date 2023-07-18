@@ -1,6 +1,10 @@
 <div class="navigation-button-group" *ngIf="navigationData">
     <ng-container *ngFor="let navigationDataItem of navigationData">
-        <a class="navigation-button" routerLink="{{ navigationDataItem.link }}">
+        <a
+            class="navigation-button"
+            routerLink="{{ navigationDataItem.link }}"
+            (click)="closeNavigation()"
+        >
             <div class="navigation-button__content">
                 <img
                     class="navigation-button__icon"
