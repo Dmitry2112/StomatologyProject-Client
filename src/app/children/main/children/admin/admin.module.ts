@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AdminCardComponent } from './components/admin-card/admin-card.component';
-import { AdminFooterComponent } from './components/admin-footer/admin-footer.component';
-import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
 import { AdminNavigationComponent } from './components/admin-navigation/admin-navigation.component';
 import { PatientListComponent } from './components/patient-list/patient-list.component';
 import { PopupComponent } from './components/popup/popup.component';
@@ -26,12 +24,11 @@ import {
     PatientDetailsPlanWebPageComponent
 } from './pages/patient-details-plan-page/patient-details-plan.web.page.component';
 import { PatientsPageWebComponent } from './pages/patients-page/patients.page.web.component';
+import { MainModule } from '../../main.module';
 
 @NgModule({
     declarations: [
         AdminCardComponent,
-        AdminFooterComponent,
-        AdminHeaderComponent,
         AdminNavigationComponent,
         PatientListComponent,
         PopupComponent,
@@ -46,7 +43,8 @@ import { PatientsPageWebComponent } from './pages/patients-page/patients.page.we
     imports: [
         CommonModule,
         RouterModule,
-        PatientModule
+        PatientModule,
+        MainModule
     ],
     providers: [
         AdminDataService,

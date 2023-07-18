@@ -24,7 +24,10 @@ import { BehaviorSubject } from 'rxjs';
         RouterModule,
         ReactiveFormsModule
     ],
-    exports: [],
+    exports: [
+        MainHeaderComponent,
+        MainFooterComponent
+    ],
     providers: [
         UpdateDataService,
         {
