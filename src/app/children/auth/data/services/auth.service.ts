@@ -30,6 +30,7 @@ export class AuthService {
                 tap((response: IAuthUserResponseModel) => {
                     this.setToken(response.accessToken);
                     this.setUserId(response.user.id);
+                    this.setRole(response.user.role);
                 })
             );
     }
@@ -44,6 +45,14 @@ export class AuthService {
         return !!this._token || !!localStorage.getItem('token');
     }
 
+    public isAdmin(): boolean {
+        return localStorage.getItem('role') === 'ADMIN';
+    }
+
+    public getUserId(): number {
+        return Number(localStorage.getItem('userId'));
+    }
+
     //TODO: использовать, чтобы передавать токен в запросах
     public getToken(): string | undefined {
         return this._token;
@@ -56,6 +65,10 @@ export class AuthService {
 
     private setUserId(userId: number): void {
         localStorage.setItem('userId', userId.toString());
+    }
+
+    private setRole(role: string): void {
+        localStorage.setItem('role', role);
     }
 
     private removeToken(): void {
