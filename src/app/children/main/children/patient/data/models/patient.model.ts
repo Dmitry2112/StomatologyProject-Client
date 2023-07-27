@@ -16,6 +16,6 @@ export class PatientModel {
         this.firstName = dto.firstName;
         this.lastName = dto.lastName;
         this.patronymic = dto.patronymic;
-        this.birthDate = new Date(dto.birthDate).toLocaleDateString();
+        this.birthDate = new Date(dto.DOB).toLocaleDateString();
     }
 }

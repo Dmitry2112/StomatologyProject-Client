@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BehaviorSubject, Subscription, switchMap } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
-import { IAppointmentData } from '../../data/interfaces/appointment-data.interface';
+import { IAppointment } from '../../data/interfaces/appointment.interface';
 import { PatientDataService } from '../../data/services/patient-data.service';
 import { UpdateDataService } from '../../../../services/update-data.service';
 import { IService } from '../../data/interfaces/service.interface';
@@ -16,7 +16,7 @@ import { IPatientResponseModel } from '../../data/response-models/patient.respon
 })
 export class AppointmentComponent implements OnInit {
     @Input()
-    public appointmentData!: IAppointmentData;
+    public appointmentData!: IAppointment;
 
     @Input()
     public canEdit: boolean = false;
@@ -99,19 +99,19 @@ export class AppointmentComponent implements OnInit {
             .pipe(
                 switchMap((data: IPatientResponseModel) => {
                     patient = data;
-                    if (new Date(this.appointmentData.dateAppointment).getTime() < Date.now()) {
+                    if (new Date(this.appointmentData.date).getTime() < Date.now()) {
                         patient.therapyList[0]
-                            .completedAppointments[this.appointmentData.numberAppointment - 1]
+                            .completedAppointments[this.appointmentData.number - 1]
                             .services = patient.therapyList[0]
-                                .completedAppointments[this.appointmentData.numberAppointment - 1]
+                                .completedAppointments[this.appointmentData.number - 1]
                                 .services.filter((service: IService) => {
                                     return service.id !== id;
                                 });
                     } else {
                         patient.therapyList[0]
-                            .completedAppointments[this.appointmentData.numberAppointment - 1]
+                            .completedAppointments[this.appointmentData.number - 1]
                             .services = patient.therapyList[0]
-                                .plannedAppointments[this.appointmentData.numberAppointment - 1]
+                                .plannedAppointments[this.appointmentData.number - 1]
                                 .services.filter((service: IService) => {
                                     return service.id !== id;
                                 });
@@ -133,7 +133,7 @@ export class AppointmentComponent implements OnInit {
         this.showForm = false;
         const newService: IService = {
             id: Date.now(),
-            serviceName: this.serviceAddForm.value.serviceName,
+            name: this.serviceAddForm.value.serviceName,
             price: this.serviceAddForm.value.price,
             count: this.serviceAddForm.value.count,
             cost: this.serviceAddForm.value.cost,
@@ -144,13 +144,13 @@ export class AppointmentComponent implements OnInit {
             .pipe(
                 switchMap((currentPatientData: IPatientResponseModel) => {
                     updatePatient = currentPatientData;
-                    if (new Date(this.appointmentData.dateAppointment).getTime() < Date.now()) {
+                    if (new Date(this.appointmentData.date).getTime() < Date.now()) {
                         updatePatient.therapyList[0]
-                            .completedAppointments[this.appointmentData.numberAppointment - 1]
+                            .completedAppointments[this.appointmentData.number - 1]
                             .services.push(newService);
                     } else {
                         updatePatient.therapyList[0]
-                            .plannedAppointments[this.appointmentData.numberAppointment - 1]
+                            .plannedAppointments[this.appointmentData.number - 1]
                             .services.push(newService);
                     }
 
@@ -172,7 +172,7 @@ export class AppointmentComponent implements OnInit {
                 switchMap((currentPatientData: IPatientResponseModel) => {
                     updatePatient = currentPatientData;
                     updatePatient.therapyList[0]
-                        .completedAppointments[this.appointmentData.numberAppointment - 1]
+                        .completedAppointments[this.appointmentData.number - 1]
                         .recommendations = this.updateRecommendationsForm.value.textRecommendations;
 
                     return this._patientDataService.updatePatientData(this._patientId, updatePatient);

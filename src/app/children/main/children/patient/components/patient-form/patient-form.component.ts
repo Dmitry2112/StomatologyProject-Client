@@ -108,7 +108,7 @@ export class PatientFormComponent implements OnInit, OnDestroy {
                     updatePatient.lastName = data[0];
                     updatePatient.firstName = data[1];
                     updatePatient.patronymic = data[2];
-                    updatePatient.birthDate = data[3];
+                    updatePatient.DOB = data[3];
 
                     return this._patientDataService.updatePatientData(this._patientId, updatePatient);
                 })

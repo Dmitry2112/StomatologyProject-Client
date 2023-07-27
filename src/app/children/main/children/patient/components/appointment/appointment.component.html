@@ -2,11 +2,11 @@
     <div class="appointment-info__table">
         <div class="appointment-info__name-label">Наименование этапа лечения</div>
         <div class="appointment-info__name-data">
-            {{ appointmentData.numberAppointment }}. {{ appointmentData.nameStageTherapy }}
+            {{ appointmentData.number }}. {{ appointmentData.name }}
         </div>
 
         <div class="appointment-info__date-label">Дата приёма</div>
-        <div class="appointment-info__date-data">{{ appointmentData.dateAppointment }}</div>
+        <div class="appointment-info__date-data">{{ appointmentData.date }}</div>
 
         <div class="appointment-info__services-label">Услуга</div>
         <div class="appointment-info__services-label">Цена за шт. </div>
@@ -16,7 +16,7 @@
 
         <ng-container *ngFor="let service of appointmentData.services">
             <div class="appointment-info__services-data">
-                <span>{{ service.serviceName }}</span>
+                <span>{{ service.name }}</span>
                 <div
                     class="appointment-info__delete-button"
                     (click)="delete(service.id)"

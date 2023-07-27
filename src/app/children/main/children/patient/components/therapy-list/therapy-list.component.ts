@@ -7,7 +7,7 @@ import { PatientDataService } from '../../data/services/patient-data.service';
 import { UpdateDataService } from '../../../../services/update-data.service';
 import { IPatientResponseModel } from '../../data/response-models/patient.response-model.interface';
 import { IPatientRequestModel } from '../../data/request-models/patient.request-model.interface';
-import { IAppointmentData } from '../../data/interfaces/appointment-data.interface';
+import { IAppointment } from '../../data/interfaces/appointment.interface';
 
 @Component({
     selector: 'therapy-list',
@@ -94,14 +94,14 @@ export class TherapyListComponent implements OnInit {
                         patient.therapyList[0]
                             .completedAppointments = patient.therapyList[0]
                                 .completedAppointments
-                                .filter((appointment: IAppointmentData) => {
+                                .filter((appointment: IAppointment) => {
                                     return appointment.id !== id;
                                 });
                     } else {
                         patient.therapyList[0]
                             .plannedAppointments = patient.therapyList[0]
                                 .plannedAppointments
-                                .filter((appointment: IAppointmentData) => {
+                                .filter((appointment: IAppointment) => {
                                     return appointment.id !== id;
                                 });
                     }
@@ -121,22 +121,22 @@ export class TherapyListComponent implements OnInit {
 
         this.showCompletedAppointmentsForm = false;
         this.showPlannedAppointmentsForm = false;
-        let newAppointment: IAppointmentData = {} as IAppointmentData;
+        let newAppointment: IAppointment = {} as IAppointment;
         if (new Date(this.addAppointmentForm.value.dateAppointment).getTime() < Date.now()) {
             newAppointment = {
                 id: Date.now(),
-                numberAppointment:  this.addAppointmentForm.value.numberAppointment,
-                nameStageTherapy: this.addAppointmentForm.value.nameStageTherapy,
-                dateAppointment: this.addAppointmentForm.value.dateAppointment,
+                number:  this.addAppointmentForm.value.numberAppointment,
+                name: this.addAppointmentForm.value.nameStageTherapy,
+                date: this.addAppointmentForm.value.dateAppointment,
                 services: [],
                 recommendations: 'Рекомендаций нет'
             };
         } else {
             newAppointment = {
                 id: Date.now(),
-                numberAppointment:  this.addAppointmentForm.value.numberAppointment,
-                nameStageTherapy: this.addAppointmentForm.value.nameStageTherapy,
-                dateAppointment: this.addAppointmentForm.value.dateAppointment,
+                number:  this.addAppointmentForm.value.numberAppointment,
+                name: this.addAppointmentForm.value.nameStageTherapy,
+                date: this.addAppointmentForm.value.dateAppointment,
                 services: [],
             };
         }

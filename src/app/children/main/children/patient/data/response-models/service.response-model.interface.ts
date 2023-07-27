@@ -1,4 +1,4 @@
-export interface IService {
+export interface IServiceResponseModel {
     id: number;
     appointmentId: number;
     name: string;
