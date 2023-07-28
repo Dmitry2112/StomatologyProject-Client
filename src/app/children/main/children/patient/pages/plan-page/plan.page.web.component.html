@@ -3,8 +3,11 @@
         <div class="plan__title">
             Рекомендуемый план лечения
         </div>
-        <div class="plan__content">
-            <therapy-list></therapy-list>
+        <div
+            class="plan__content"
+            *ngFor="let therapy of therapyListModel.therapyList"
+        >
+            <therapy [therapyData]="therapy"></therapy>
         </div>
     </div>
 </div>

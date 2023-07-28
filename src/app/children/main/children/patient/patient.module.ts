@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PatientCardComponent } from './components/patient-card/patient-card.component';
 import { PatientFormComponent } from './components/patient-form/patient-form.component';
 import { PhotodocsComponent } from './components/photodocs/photodocs.component';
-import { TherapyListComponent } from './components/therapy-list/therapy-list.component';
+import { TherapyComponent } from './components/therapy/therapy.component';
 import { HomePageWebComponent } from './pages/home-page/home.page.web.component';
 import { PhotodocsPageWebComponent } from './pages/photodocs-page/photodocs.page.web.component';
 import { PlanPageWebComponent } from './pages/plan-page/plan.page.web.component';
@@ -18,7 +18,7 @@ import { PatientDataService } from './data/services/patient-data.service';
         PatientCardComponent,
         PatientFormComponent,
         PhotodocsComponent,
-        TherapyListComponent,
+        TherapyComponent,
         HomePageWebComponent,
         PhotodocsPageWebComponent,
         PlanPageWebComponent
@@ -34,7 +34,7 @@ import { PatientDataService } from './data/services/patient-data.service';
     exports: [
         PatientCardComponent,
         PatientFormComponent,
-        TherapyListComponent,
+        TherapyComponent,
         AppointmentComponent,
     ]
 })
