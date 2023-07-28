@@ -6,6 +6,6 @@ export interface IAdminResponseModel {
     firstName: string,
     lastName: string,
     patronymic: string,
-    birthDate: string,
+    DOB: string,
     role: string,
 }

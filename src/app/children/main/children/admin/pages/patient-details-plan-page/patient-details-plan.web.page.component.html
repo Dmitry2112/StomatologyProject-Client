@@ -3,8 +3,14 @@
         <div class="plan__title">
             Редактирование рекомендуемого плана лечения
         </div>
-        <div class="plan__content">
-            <therapy [canEdit]="true"></therapy>
+        <div
+            class="plan__content"
+            *ngFor="let therapy of therapyListModel.therapyList"
+        >
+            <therapy
+                [canEdit]="true"
+                [therapyData]="therapy"
+            ></therapy>
         </div>
     </div>
 </div>

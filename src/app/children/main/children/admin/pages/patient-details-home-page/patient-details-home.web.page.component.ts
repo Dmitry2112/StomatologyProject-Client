@@ -20,7 +20,7 @@ export class PatientDetailsHomeWebPageComponent implements OnInit, OnDestroy {
     public patientModel: PatientModel = new PatientModel();
     public patientViewModel: PatientViewModel = new PatientViewModel();
 
-    private _employeeId!: number;
+    private _patientId!: number;
 
     private _routeSubscription!: Subscription;
 
@@ -40,7 +40,7 @@ export class PatientDetailsHomeWebPageComponent implements OnInit, OnDestroy {
 
     public ngOnInit(): void {
         this._routeSubscription = this._route.params.subscribe((params: Params) => {
-            this._employeeId = params['patientId'];
+            this._patientId = params['patientId'];
         });
 
         this.getPatientData();
@@ -53,7 +53,7 @@ export class PatientDetailsHomeWebPageComponent implements OnInit, OnDestroy {
     }
 
     public getPatientData(): void {
-        this._patientDataService.getPatientData(this._employeeId)
+        this._patientDataService.getPatientData(this._patientId)
             .subscribe((data: IPatientResponseModel) => {
                 this.patientModel.fromDto(data);
                 this.patientViewModel.fromModel(this.patientModel);
@@ -83,7 +83,7 @@ export class PatientDetailsHomeWebPageComponent implements OnInit, OnDestroy {
                         },
                         {
                             label: 'Дата рождения:',
-                            control: new FormControl(data.birthDate, [
+                            control: new FormControl(data.DOB, [
                                 Validators.required
                             ]),
                             controlType: 'date'

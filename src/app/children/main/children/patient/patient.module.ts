@@ -11,6 +11,10 @@ import { HomePageWebComponent } from './pages/home-page/home.page.web.component'
 import { PhotodocsPageWebComponent } from './pages/photodocs-page/photodocs.page.web.component';
 import { PlanPageWebComponent } from './pages/plan-page/plan.page.web.component';
 import { PatientDataService } from './data/services/patient-data.service';
+import { TherapyDataService } from './data/services/therapy-data.service';
+import { AppointmentDataService } from './data/services/appointment-data.service';
+import { ServiceDataService } from './data/services/service-data.service';
+import { FileDataService } from './data/services/file-data.service';
 
 @NgModule({
     declarations: [
@@ -29,7 +33,11 @@ import { PatientDataService } from './data/services/patient-data.service';
         ReactiveFormsModule
     ],
     providers: [
-        PatientDataService
+        PatientDataService,
+        TherapyDataService,
+        AppointmentDataService,
+        ServiceDataService,
+        FileDataService
     ],
     exports: [
         PatientCardComponent,
