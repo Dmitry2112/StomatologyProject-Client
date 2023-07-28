@@ -27,9 +27,9 @@
             </div>
             <div class="appointment-info__services-data">{{ service.price }}</div>
             <div class="appointment-info__services-data">{{ service.count }}</div>
-            <div class="appointment-info__services-data">{{ service.cost }}</div>
+            <div class="appointment-info__services-data">{{ service.price * service.count }}</div>
             <div class="appointment-info__services-data">
-                <div class="doctor">{{ service.doctorProfile }}</div>
+                <div class="doctor">{{ service.doctorSpecialization }}</div>
             </div>
         </ng-container>
     </div>
@@ -44,7 +44,7 @@
             <input
                 class="service-add-form__data"
                 type="text"
-                formControlName="serviceName"
+                formControlName="name"
             >
             <input
                 class="service-add-form__data"
@@ -58,13 +58,8 @@
             >
             <input
                 class="service-add-form__data"
-                type="number"
-                formControlName="cost"
-            >
-            <input
-                class="service-add-form__data"
                 type="text"
-                formControlName="doctorProfile"
+                formControlName="doctorSpecialization"
             >
         </div>
         <div class="service-add-form__action">

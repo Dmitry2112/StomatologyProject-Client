@@ -1,13 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BehaviorSubject, Subscription, switchMap } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { IAppointment } from '../../data/interfaces/appointment.interface';
 import { PatientDataService } from '../../data/services/patient-data.service';
 import { UpdateDataService } from '../../../../services/update-data.service';
 import { IService } from '../../data/interfaces/service.interface';
-import { IPatientRequestModel } from '../../data/request-models/patient.request-model.interface';
-import { IPatientResponseModel } from '../../data/response-models/patient.response-model.interface';
+import { ServiceDataService } from '../../data/services/service-data.service';
+import { IServiceRequestModel } from '../../data/request-models/service.request-model.interface';
+import { AppointmentDataService } from '../../data/services/appointment-data.service';
+import { IUpdateAppointmentRequestModel } from '../../data/request-models/update-appointment.request-model.interface';
 
 @Component({
     selector: 'appointment',
@@ -26,7 +28,7 @@ export class AppointmentComponent implements OnInit {
     public isOpen$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
     public serviceAddForm: FormGroup = new FormGroup({
-        serviceName: new FormControl('', [
+        name: new FormControl('', [
             Validators.required
         ]),
         price: new FormControl('', [
@@ -35,10 +37,7 @@ export class AppointmentComponent implements OnInit {
         count: new FormControl('', [
             Validators.required
         ]),
-        cost: new FormControl('', [
-            Validators.required
-        ]),
-        doctorProfile: new FormControl('', [
+        doctorSpecialization: new FormControl('', [
             Validators.required
         ])
     });
@@ -58,6 +57,8 @@ export class AppointmentComponent implements OnInit {
 
     constructor(
         private _patientDataService: PatientDataService,
+        private _appointmentDataService: AppointmentDataService,
+        private _serviceDataService: ServiceDataService,
         private _route: ActivatedRoute,
         private _updateDataService: UpdateDataService
     ) {
@@ -69,7 +70,7 @@ export class AppointmentComponent implements OnInit {
         });
 
         this.appointmentData.services.forEach((service: IService) => {
-            this.sumCostForAppointment += service.cost;
+            this.sumCostForAppointment += (service.price * service.count);
         });
     }
 
@@ -94,33 +95,8 @@ export class AppointmentComponent implements OnInit {
     }
 
     public delete(id: number): void {
-        let patient!: IPatientRequestModel;
-        this._patientDataService.getPatientData(this._patientId)
-            .pipe(
-                switchMap((data: IPatientResponseModel) => {
-                    patient = data;
-                    if (new Date(this.appointmentData.date).getTime() < Date.now()) {
-                        patient.therapyList[0]
-                            .completedAppointments[this.appointmentData.number - 1]
-                            .services = patient.therapyList[0]
-                                .completedAppointments[this.appointmentData.number - 1]
-                                .services.filter((service: IService) => {
-                                    return service.id !== id;
-                                });
-                    } else {
-                        patient.therapyList[0]
-                            .completedAppointments[this.appointmentData.number - 1]
-                            .services = patient.therapyList[0]
-                                .plannedAppointments[this.appointmentData.number - 1]
-                                .services.filter((service: IService) => {
-                                    return service.id !== id;
-                                });
-                    }
-
-
-                    return this._patientDataService.updatePatientData(this._patientId, patient);
-                })
-            ).subscribe(() => this._updateDataService.callMethodOfPageComponent());
+        this._serviceDataService.deleteService(id)
+            .subscribe(() => this._updateDataService.callMethodOfPageComponent());
     }
 
     public onSubmit(): void {
@@ -131,32 +107,16 @@ export class AppointmentComponent implements OnInit {
         }
 
         this.showForm = false;
-        const newService: IService = {
-            id: Date.now(),
-            name: this.serviceAddForm.value.serviceName,
+        const newService: IServiceRequestModel = {
+            name: this.serviceAddForm.value.name,
             price: this.serviceAddForm.value.price,
             count: this.serviceAddForm.value.count,
-            cost: this.serviceAddForm.value.cost,
-            doctorProfile: this.serviceAddForm.value.doctorProfile
+            doctorSpecialization: this.serviceAddForm.value.doctorSpecialization,
+            appointmentId: this.appointmentData.id
         };
-        let updatePatient!: IPatientRequestModel;
-        this._patientDataService.getPatientData(this._patientId)
-            .pipe(
-                switchMap((currentPatientData: IPatientResponseModel) => {
-                    updatePatient = currentPatientData;
-                    if (new Date(this.appointmentData.date).getTime() < Date.now()) {
-                        updatePatient.therapyList[0]
-                            .completedAppointments[this.appointmentData.number - 1]
-                            .services.push(newService);
-                    } else {
-                        updatePatient.therapyList[0]
-                            .plannedAppointments[this.appointmentData.number - 1]
-                            .services.push(newService);
-                    }
 
-                    return this._patientDataService.updatePatientData(this._patientId, updatePatient);
-                })
-            ).subscribe(() => this._updateDataService.callMethodOfPageComponent());
+        this._serviceDataService.addService(newService)
+            .subscribe(() => this._updateDataService.callMethodOfPageComponent());
     }
 
     public onSubmitRecommendations(): void {
@@ -166,17 +126,12 @@ export class AppointmentComponent implements OnInit {
             return;
         }
         this.isOpen$.next(false);
-        let updatePatient!: IPatientRequestModel;
-        this._patientDataService.getPatientData(this._patientId)
-            .pipe(
-                switchMap((currentPatientData: IPatientResponseModel) => {
-                    updatePatient = currentPatientData;
-                    updatePatient.therapyList[0]
-                        .completedAppointments[this.appointmentData.number - 1]
-                        .recommendations = this.updateRecommendationsForm.value.textRecommendations;
 
-                    return this._patientDataService.updatePatientData(this._patientId, updatePatient);
-                })
-            ).subscribe(() => this._updateDataService.callMethodOfPageComponent());
+        const updateAppointment: IUpdateAppointmentRequestModel = {
+            recommendations: this.updateRecommendationsForm.value.textRecommendations,
+        };
+
+        this._appointmentDataService.updateAppointment(this.appointmentData.id, updateAppointment)
+            .subscribe(() => this._updateDataService.callMethodOfPageComponent());
     }
 }
