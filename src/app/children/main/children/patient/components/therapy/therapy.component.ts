@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PatientDataService } from '../../data/services/patient-data.service';
 import { UpdateDataService } from '../../../../services/update-data.service';
@@ -8,6 +7,7 @@ import { IAppointment } from '../../data/interfaces/appointment.interface';
 import { ITherapy } from '../../data/interfaces/therapy.interface';
 import { AppointmentDataService } from '../../data/services/appointment-data.service';
 import { IAppointmentRequestModel } from '../../data/request-models/appointment.request-model.interface';
+import { TherapyDataService } from '../../data/services/therapy-data.service';
 
 @Component({
     selector: 'therapy',
@@ -39,24 +39,17 @@ export class TherapyComponent implements OnInit {
         ]),
     });
 
-    private _patientId!: number;
-
-    private _routeSubscription!: Subscription;
-
     constructor(
         private _ref: ChangeDetectorRef,
         private _patientDataService: PatientDataService,
         private _appointmentDataService: AppointmentDataService,
+        private _therapyDataService: TherapyDataService,
         private _route: ActivatedRoute,
         private _updateDataService: UpdateDataService
     ) {
     }
 
     public ngOnInit(): void {
-        this._routeSubscription = this._route.params.subscribe((params: Params) => {
-            this._patientId = params['patientId'];
-        });
-
         this.completedAppointments = this.therapyData.appointments
             .filter((appointment: IAppointment) => {
                 return appointment.completed;
@@ -84,8 +77,13 @@ export class TherapyComponent implements OnInit {
         this.showPlannedAppointmentsForm = false;
     }
 
-    public delete(id: number): void {
+    public deleteAppointment(id: number): void {
         this._appointmentDataService.deleteAppointment(id)
+            .subscribe(() => this._updateDataService.callMethodOfPageComponent());
+    }
+
+    public deleteTherapy(id: number): void {
+        this._therapyDataService.deleteTherapy(id)
             .subscribe(() => this._updateDataService.callMethodOfPageComponent());
     }
 

@@ -25,6 +25,7 @@ import {
 } from './pages/patient-details-plan-page/patient-details-plan.web.page.component';
 import { PatientsPageWebComponent } from './pages/patients-page/patients.page.web.component';
 import { MainModule } from '../../main.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -43,6 +44,7 @@ import { MainModule } from '../../main.module';
     imports: [
         CommonModule,
         RouterModule,
+        ReactiveFormsModule,
         PatientModule,
         MainModule
     ],

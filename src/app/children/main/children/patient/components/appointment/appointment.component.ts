@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BehaviorSubject, Subscription } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { IAppointment } from '../../data/interfaces/appointment.interface';
 import { PatientDataService } from '../../data/services/patient-data.service';
 import { UpdateDataService } from '../../../../services/update-data.service';
@@ -51,10 +51,6 @@ export class AppointmentComponent implements OnInit {
     public showForm: boolean = false;
     public showRecommendationsForm: boolean = false;
 
-    private _patientId!: number;
-
-    private _routeSubscription!: Subscription;
-
     constructor(
         private _patientDataService: PatientDataService,
         private _appointmentDataService: AppointmentDataService,
@@ -65,10 +61,6 @@ export class AppointmentComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this._routeSubscription = this._route.params.subscribe((params: Params) => {
-            this._patientId = params['patientId'];
-        });
-
         this.appointmentData.services.forEach((service: IService) => {
             this.sumCostForAppointment += (service.price * service.count);
         });

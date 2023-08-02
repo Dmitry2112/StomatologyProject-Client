@@ -1,13 +1,26 @@
 .therapy {
     font-family: Roboto, sans-serif;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 
     &__title {
         font-weight: 500;
         font-size: 24px;
         line-height: 38px;
         color: #202124;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__delete-therapy-button {
+        cursor: pointer;
+        margin-left: 10px;
+        margin-top: 5px;
+        transition-duration: 0.2s;
+
+        &:hover {
+            opacity: 0.7;
+        }
     }
 
     &__content {

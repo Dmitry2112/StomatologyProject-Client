@@ -3,7 +3,14 @@
     *ngIf="therapyData"
 >
     <div class="therapy__title">
-        {{ therapyData.name }}
+        <span>{{ therapyData.name }}</span>
+        <div
+            class="therapy__delete-therapy-button"
+            (click)="deleteTherapy(therapyData.id)"
+            *ngIf="canEdit"
+        >
+            <img src="assets/images/delete-button.svg" alt="удалить">
+        </div>
     </div>
     <div class="therapy__content">
         <div class="appointment-title">
@@ -20,7 +27,7 @@
                     <div class="completed-appointments__delete-button-container">
                         <div
                             class="completed-appointments__delete-button"
-                            (click)="delete(completedAppointment.id)"
+                            (click)="deleteAppointment(completedAppointment.id)"
                             *ngIf="canEdit"
                         >
                             <img
@@ -111,7 +118,7 @@
                     <div class="completed-appointments__delete-button-container">
                         <div
                             class="completed-appointments__delete-button"
-                            (click)="delete(plannedAppointment.id)"
+                            (click)="deleteAppointment(plannedAppointment.id)"
                             *ngIf="canEdit"
                         >
                             <img

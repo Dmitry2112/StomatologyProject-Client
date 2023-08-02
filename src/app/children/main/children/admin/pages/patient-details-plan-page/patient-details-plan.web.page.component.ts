@@ -6,6 +6,10 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { UpdateDataService } from '../../../../services/update-data.service';
 import { takeUntil } from 'rxjs';
 import { IPatientResponseModel } from '../../../patient/data/response-models/patient.response-model.interface';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { IAppointmentRequestModel } from '../../../patient/data/request-models/appointment.request-model.interface';
+import { ITherapyRequestModel } from '../../../patient/data/request-models/therapy.request-model.interface';
+import { TherapyDataService } from '../../../patient/data/services/therapy-data.service';
 
 @Component({
     selector: 'patient-details-plan-page',
@@ -17,6 +21,14 @@ export class PatientDetailsPlanWebPageComponent implements OnInit {
 
     public therapyListModel: TherapyListModel = new TherapyListModel();
 
+    public showTherapyForm: boolean = false;
+
+    public addTherapyForm: FormGroup = new FormGroup({
+        name: new FormControl('', [
+            Validators.required
+        ])
+    });
+
     private _patientId!: number;
 
     constructor(
@@ -25,7 +37,8 @@ export class PatientDetailsPlanWebPageComponent implements OnInit {
         private _patientDataService: PatientDataService,
         private _route: ActivatedRoute,
         private _ref: ChangeDetectorRef,
-        private _updateDataService: UpdateDataService
+        private _updateDataService: UpdateDataService,
+        private _therapyDataService: TherapyDataService
     ) {
         this._updateDataService.invokeEvent.subscribe((value: boolean) => {
             if (value) {
@@ -53,5 +66,30 @@ export class PatientDetailsPlanWebPageComponent implements OnInit {
 
                 this._ref.detectChanges();
             });
+    }
+
+    public cancelTherapy(): void {
+        this.showTherapyForm = false;
+    }
+
+    public addTherapy(): void {
+        this.showTherapyForm = true;
+    }
+
+    public onSubmit(): void {
+        if (this.addTherapyForm.invalid) {
+            this.addTherapyForm.markAllAsTouched();
+
+            return;
+        }
+
+        this.showTherapyForm = false;
+        const newTherapy: ITherapyRequestModel = {
+            name: this.addTherapyForm.value.name,
+            userId: this._patientId
+        };
+
+        this._therapyDataService.addTherapy(newTherapy)
+            .subscribe(() => this._updateDataService.callMethodOfPageComponent());
     }
 }
