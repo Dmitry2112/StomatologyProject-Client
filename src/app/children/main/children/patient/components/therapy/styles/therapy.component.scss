@@ -1,5 +1,6 @@
 .therapy {
     font-family: Roboto, sans-serif;
+    margin-bottom: 15px;
 
     &__title {
         font-weight: 500;
@@ -37,6 +38,7 @@
         border: 0.7px solid #B11261;
         border-radius: 4px;
         width: 200px;
+        height: 40px;
         padding: 6px 15px;
         margin-top: 15px;
         transition-duration: 0.2s;
@@ -73,6 +75,7 @@
         display: flex;
         align-items: center;
         width: 200px;
+        height: 40px;
         padding: 6px 15px;
         margin-bottom: 15px;
 
@@ -158,4 +161,11 @@
             opacity: 0.4;
         }
     }
+}
+
+.noAppointmentInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
 }

@@ -9,30 +9,35 @@
         <div class="appointment-title">
             Пройденные приемы:
         </div>
-        <ng-container *ngFor="let completedAppointment of completedAppointments">
-            <div class="completed-appointments">
-                <appointment
-                    [appointmentData]="completedAppointment"
-                    [canEdit]="canEdit"
-                >
-                </appointment>
-                <div class="completed-appointments__delete-button-container">
-                    <div
-                        class="completed-appointments__delete-button"
-                        (click)="delete(completedAppointment.id)"
-                        *ngIf="canEdit"
+        <ng-container *ngIf="completedAppointments.length !== 0; else noCompletedAppointments">
+            <ng-container *ngFor="let completedAppointment of completedAppointments">
+                <div class="completed-appointments">
+                    <appointment
+                        [appointmentData]="completedAppointment"
+                        [canEdit]="canEdit"
                     >
-                        <img
-                            class="completed-appointments__delete-button-icon"
-                            src="assets/images/delete-button.svg"
-                            alt="удалить"
+                    </appointment>
+                    <div class="completed-appointments__delete-button-container">
+                        <div
+                            class="completed-appointments__delete-button"
+                            (click)="delete(completedAppointment.id)"
+                            *ngIf="canEdit"
                         >
-                        <span class="completed-appointments__delete-button-text">Удалить этап</span>
+                            <img
+                                class="completed-appointments__delete-button-icon"
+                                src="assets/images/delete-button.svg"
+                                alt="удалить"
+                            >
+                            <span class="completed-appointments__delete-button-text">Удалить этап</span>
+                        </div>
                     </div>
                 </div>
 
-            </div>
+            </ng-container>
         </ng-container>
+        <ng-template #noCompletedAppointments>
+            <div class="noAppointmentInfo">Пройденных приемов нет</div>
+        </ng-template>
 
         <form
             class="add-appointment-form"
@@ -90,33 +95,39 @@
             </div>
         </div>
 
-        <hr>
+        <hr style="height:3px; border:none; color:#A1A1A1; background-color:#A1A1A1;">
+
         <div class="appointment-title">
             Планируемые приемы:
         </div>
-        <ng-container *ngFor="let plannedAppointment of plannedAppointments">
-            <div class="planned-appointments">
-                <appointment
-                    [appointmentData]="plannedAppointment"
-                    [canEdit]="canEdit"
-                >
-                </appointment>
-                <div class="completed-appointments__delete-button-container">
-                    <div
-                        class="completed-appointments__delete-button"
-                        (click)="delete(plannedAppointment.id)"
-                        *ngIf="canEdit"
+        <ng-container *ngIf="plannedAppointments.length !== 0; else noPlannedAppointments">
+            <ng-container *ngFor="let plannedAppointment of plannedAppointments">
+                <div class="planned-appointments">
+                    <appointment
+                        [appointmentData]="plannedAppointment"
+                        [canEdit]="canEdit"
                     >
-                        <img
-                            class="completed-appointments__delete-button-icon"
-                            src="assets/images/delete-button.svg"
-                            alt="удалить"
+                    </appointment>
+                    <div class="completed-appointments__delete-button-container">
+                        <div
+                            class="completed-appointments__delete-button"
+                            (click)="delete(plannedAppointment.id)"
+                            *ngIf="canEdit"
                         >
-                        <span class="completed-appointments__delete-button-text">Удалить этап</span>
+                            <img
+                                class="completed-appointments__delete-button-icon"
+                                src="assets/images/delete-button.svg"
+                                alt="удалить"
+                            >
+                            <span class="completed-appointments__delete-button-text">Удалить этап</span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </ng-container>
         </ng-container>
+        <ng-template #noPlannedAppointments>
+            <div class="noAppointmentInfo">Планируемых приемов нет</div>
+        </ng-template>
 
         <form
             class="add-appointment-form"

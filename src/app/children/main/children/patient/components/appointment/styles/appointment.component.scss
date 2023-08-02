@@ -146,7 +146,10 @@
     line-height: 28px;
     font-weight: 500;
     margin-top: 15px;
-    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: solid 1px #A1A1A1;
+    border-bottom: solid 1px #A1A1A1;
 
     &__text {
         margin-left: 15px;
@@ -246,7 +249,7 @@
     color: #B11261;
     background-color: rgba(214, 51, 132, 0.14);
     padding-bottom: 2px;
-    margin-bottom: 40px;
+    margin-bottom: 18px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -379,4 +382,11 @@
             opacity: 0.4;
         }
     }
+}
+
+.noServicesInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
 }
