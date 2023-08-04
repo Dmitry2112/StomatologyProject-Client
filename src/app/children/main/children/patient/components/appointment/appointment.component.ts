@@ -42,11 +42,6 @@ export class AppointmentComponent implements OnInit {
         ])
     });
 
-    // public updateRecommendationsForm: FormGroup = new FormGroup({
-    //     textRecommendations: new FormControl(this.appointmentData?.recommendations, [
-    //         Validators.required
-    //     ]),
-    // });
     public updateRecommendationsForm!: FormGroup;
 
     public showForm: boolean = false;

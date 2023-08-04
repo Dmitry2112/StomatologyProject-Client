@@ -1,5 +1,8 @@
 <div class="appointment-info" *ngIf="appointmentData">
-    <div class="appointment-info__table">
+    <div
+        class="appointment-info__table"
+        [ngClass]="{ 'completed-appointment': appointmentData.completed }"
+    >
         <div class="appointment-info__name-label">Наименование этапа лечения</div>
         <div class="appointment-info__name-data">
             {{ appointmentData.number }}. {{ appointmentData.name }}
@@ -20,7 +23,7 @@
                 <div
                     class="appointment-info__delete-button"
                     (click)="delete(service.id)"
-                    *ngIf="canEdit"
+                    *ngIf="canEdit && !appointmentData.completed"
                 >
                     <img src="assets/images/delete-button.svg" alt="удалить">
                 </div>
@@ -45,21 +48,25 @@
                 class="service-add-form__data"
                 type="text"
                 formControlName="name"
+                placeholder="Название услуги"
             >
             <input
                 class="service-add-form__data"
                 type="number"
                 formControlName="price"
+                placeholder="Цена за шт."
             >
             <input
                 class="service-add-form__data"
                 type="number"
                 formControlName="count"
+                placeholder="Количество"
             >
             <input
                 class="service-add-form__data"
                 type="text"
                 formControlName="doctorSpecialization"
+                placeholder="Профиль врача"
             >
         </div>
         <div class="service-add-form__action">
@@ -98,7 +105,7 @@
         <div
             class="appointment-info__add-button"
             (click)="add()"
-            *ngIf="canEdit"
+            *ngIf="canEdit && !appointmentData.completed"
             [ngClass]="{'appointment-info__add-button_hide': showForm}"
         >
             <img
@@ -109,7 +116,10 @@
         </div>
     </div>
 
-    <div class="appointment-sum">
+    <div
+        class="appointment-sum"
+        [ngClass]="{ 'completed-appointment': appointmentData.completed }"
+    >
         <div class="appointment-sum__text">
             Сумма за весь приём:
         </div>
