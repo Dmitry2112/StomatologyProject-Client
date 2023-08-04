@@ -1,12 +1,13 @@
 .patient-card {
     width: 100%;
-    //padding: 50px 50px 65px;
-    position: relative;
     background-color: white;
     margin-bottom: 33px;
+    display: flex;
+    justify-content: start;
+    align-items: end;
 
     &__content {
-        width: 50%;
+        width: 100%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -54,9 +55,6 @@
     &__edit-button {
         width: 24px;
         height: 24px;
-        right: 15px;
-        bottom: 15px;
-        position: absolute;
         cursor: pointer;
         transition-duration: 0.3s;
 

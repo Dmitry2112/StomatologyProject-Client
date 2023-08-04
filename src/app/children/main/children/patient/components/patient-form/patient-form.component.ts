@@ -1,14 +1,13 @@
 import { Component, EventEmitter, Inject, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormArray, FormGroup } from '@angular/forms';
-import { BehaviorSubject, Subscription, switchMap } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { ActivatedRoute, Params } from '@angular/router';
 import { PatientDataService } from '../../data/services/patient-data.service';
 import { PATIENT_FORM_DATA_TOKEN } from '../../data/tokens/patient-form-data.token';
 import { IPatientFormData } from '../../data/interfaces/patient-form-data.interface';
 import { UpdateDataService } from '../../../../services/update-data.service';
 import { IPatientFormField } from '../../data/interfaces/patient-form-field.interface';
-import { IPatientRequestModel } from '../../data/request-models/patient.request-model.interface';
-import { IPatientResponseModel } from '../../data/response-models/patient.response-model.interface';
+import { IUpdatePatientRequestModel } from '../../data/request-models/update-patient.request-model.interface';
 
 
 
@@ -100,18 +99,14 @@ export class PatientFormComponent implements OnInit, OnDestroy {
     }
 
     public submitPatientData(data: string[]): void {
-        let updatePatient!: IPatientRequestModel;
-        this._patientDataService.getPatientData(this._patientId)
-            .pipe(
-                switchMap((currentPatientData: IPatientResponseModel) => {
-                    updatePatient = currentPatientData;
-                    updatePatient.lastName = data[0];
-                    updatePatient.firstName = data[1];
-                    updatePatient.patronymic = data[2];
-                    updatePatient.DOB = data[3];
+        const updatePatient: IUpdatePatientRequestModel = {
+            lastName: data[0],
+            firstName: data[1],
+            patronymic: data[2],
+            DOB: data[3]
+        };
 
-                    return this._patientDataService.updatePatientData(this._patientId, updatePatient);
-                })
-            ).subscribe(() => this._updateDataService.callMethodOfPageComponent());
+        this._patientDataService.updatePatient(this._patientId, updatePatient)
+            .subscribe(() => this._updateDataService.callMethodOfPageComponent());
     }
 }
