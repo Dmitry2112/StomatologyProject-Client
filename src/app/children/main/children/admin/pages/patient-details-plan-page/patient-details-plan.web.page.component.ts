@@ -7,7 +7,6 @@ import { UpdateDataService } from '../../../../services/update-data.service';
 import { takeUntil } from 'rxjs';
 import { IPatientResponseModel } from '../../../patient/data/response-models/patient.response-model.interface';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { IAppointmentRequestModel } from '../../../patient/data/request-models/appointment.request-model.interface';
 import { ITherapyRequestModel } from '../../../patient/data/request-models/therapy.request-model.interface';
 import { TherapyDataService } from '../../../patient/data/services/therapy-data.service';
 

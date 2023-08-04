@@ -1,3 +1,1 @@
-export interface IFileRequestModel {
-
-}
+export interface IFileRequestModel extends FormData {}

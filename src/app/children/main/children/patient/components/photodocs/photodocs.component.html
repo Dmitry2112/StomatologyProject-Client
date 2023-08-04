@@ -8,24 +8,86 @@
         <div class="photodocs-info__label">Вид фото</div>
         <div class="photodocs-info__label">Файл для скачивания</div>
 
-        <ng-container *ngFor="let i of [1, 2, 3, 4]">
-            <div class="photodocs-info__data">23.03.2023</div>
-            <div class="photodocs-info__data">Рентген</div>
-            <div class="photodocs-info__data">
-                <img
-                    class="photodocs-info__img"
-                    src="assets/images/photodocs-pdf.svg"
-                    alt="тип документа"
-                >
-                <a
-                    class="photodocs-file"
-                    href="/assets/images/photodoc.pdf"
-                    download="myFile"
-                >
-                    Рентген
-                </a>
-            </div>
+        <ng-container *ngIf="files.length !== 0">
+            <ng-container *ngFor="let file of files">
+                <div class="photodocs-info__data">{{ file.date }}</div>
+                <div class="photodocs-info__data">{{ file.type }}</div>
+                <div class="photodocs-info__data">
+                    <img
+                        class="photodocs-info__img"
+                        src="assets/images/photodocs-pdf.svg"
+                        alt="тип документа"
+                    >
+                    <a
+                        class="photodocs-info__file"
+                        href="http://localhost:3000/{{ file.fileName }}"
+                        download="myFile"
+                        target="_blank"
+                    >
+                        {{ file.type }}
+                    </a>
+                </div>
+            </ng-container>
         </ng-container>
+
+    </div>
+
+    <form
+        class="add-photodoc-form"
+        [formGroup]="addPhotodocForm"
+        (ngSubmit)="onSubmit()"
+        *ngIf="showPhotodocForm"
+    >
+        <div class="add-photodoc-form__container">
+            <input
+                class="add-photodoc-form__data"
+                type="date"
+                formControlName="date"
+            >
+            <input
+                class="add-photodoc-form__data"
+                type="text"
+                formControlName="type"
+                placeholder="Вид фото"
+            >
+            <input
+                class="add-photodoc-form__data"
+                type="file"
+                formControlName="file"
+                (change)="onFileSelected($event)"
+            >
+        </div>
+        <div class="add-photodoc-form__action">
+            <button
+                class="add-photodoc-form__cancel-button"
+                type="button"
+                (click)="cancelPhotodoc()"
+            >
+                Отмена
+            </button>
+
+            <button
+                class="add-photodoc-form__submit-button"
+                type="submit"
+            >
+                Сохранить
+            </button>
+        </div>
+    </form>
+
+    <div class="photodocs-info__button-container">
+        <div
+            class="photodocs-info__add-button"
+            (click)="addPhotodoc()"
+            *ngIf="canEdit"
+            [ngClass]="{'photodocs-info__add-button_hide': showPhotodocForm}"
+        >
+            <img
+                class="photodocs-info__icon"
+                src="/assets/images/add-button.svg"
+                alt="кнопка добавить">
+            <p class="therapy__name">Добавить фотодокумент</p>
+        </div>
     </div>
 </div>
 

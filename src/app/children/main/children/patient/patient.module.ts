@@ -44,6 +44,7 @@ import { FileDataService } from './data/services/file-data.service';
         PatientFormComponent,
         TherapyComponent,
         AppointmentComponent,
+        PhotodocsComponent,
     ]
 })
 export class PatientModule {

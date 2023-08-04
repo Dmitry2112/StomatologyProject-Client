@@ -12,7 +12,11 @@ export class FileDataService {
     ) {
     }
 
-    public addFile(file: IFileRequestModel): Observable<IFileResponseModel> {
-        return this._http.post<IFileResponseModel>(`${apiUrl}/files`, file);
+    public getPatientFiles(patientId: number): Observable<IFileResponseModel[]> {
+        return this._http.get<IFileResponseModel[]>(`${apiUrl}/files/${patientId}`);
+    }
+
+    public addFile(newFile: IFileRequestModel): Observable<IFileResponseModel> {
+        return this._http.post<IFileResponseModel>(`${apiUrl}/files`, newFile);
     }
 }
