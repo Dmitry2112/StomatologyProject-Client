@@ -320,7 +320,6 @@
 
 .update-recommendations-form {
     width: 100%;
-    position: relative;
     margin-top: 10px;
 
     &__container {
@@ -339,6 +338,7 @@
 
     &__action {
         display: flex;
+        justify-content: end;
     }
 
     &__cancel-button {
@@ -348,6 +348,7 @@
         height: 25px;
         border-radius: 3px;
         margin-top: 10px;
+        margin-right: 15px;
         border: solid 0.5px;
 
         &:hover {
@@ -366,8 +367,6 @@
         width: 100px;
         height: 25px;
         border-radius: 3px;
-        right: 0;
-        position: absolute;
         margin-top: 10px;
         background-color: #202124;
         color: white;

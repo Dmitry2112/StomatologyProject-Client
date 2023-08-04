@@ -1,3 +1,4 @@
 export interface IUpdateAppointmentRequestModel {
-    recommendations: string;
+    recommendations?: string;
+    completed?: boolean
 }

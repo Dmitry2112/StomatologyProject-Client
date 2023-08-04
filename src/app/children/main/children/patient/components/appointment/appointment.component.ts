@@ -42,11 +42,12 @@ export class AppointmentComponent implements OnInit {
         ])
     });
 
-    public updateRecommendationsForm: FormGroup = new FormGroup({
-        textRecommendations: new FormControl('', [
-            Validators.required
-        ]),
-    });
+    // public updateRecommendationsForm: FormGroup = new FormGroup({
+    //     textRecommendations: new FormControl(this.appointmentData?.recommendations, [
+    //         Validators.required
+    //     ]),
+    // });
+    public updateRecommendationsForm!: FormGroup;
 
     public showForm: boolean = false;
     public showRecommendationsForm: boolean = false;
@@ -63,6 +64,12 @@ export class AppointmentComponent implements OnInit {
     public ngOnInit(): void {
         this.appointmentData.services.forEach((service: IService) => {
             this.sumCostForAppointment += (service.price * service.count);
+        });
+
+        this.updateRecommendationsForm = new FormGroup({
+            textRecommendations: new FormControl(this.appointmentData.recommendations, [
+                Validators.required
+            ])
         });
     }
 
@@ -84,6 +91,7 @@ export class AppointmentComponent implements OnInit {
 
     public cancelRecommendations(): void {
         this.showRecommendationsForm = false;
+        this.isOpen$.next(!this.isOpen$.value);
     }
 
     public delete(id: number): void {

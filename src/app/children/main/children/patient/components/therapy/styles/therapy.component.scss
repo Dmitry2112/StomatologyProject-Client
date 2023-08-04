@@ -67,7 +67,7 @@
 }
 
 .completed-appointments {
-    &__delete-button-container {
+    &__button-container {
         display: flex;
         justify-content: start;
     }
@@ -77,6 +77,66 @@
     }
 
     &__delete-button {
+        cursor: pointer;
+        margin-left: 10px;
+        margin-top: 5px;
+        transition-duration: 0.2s;
+        font-size: 16px;
+        line-height: 20px;
+        border: 0.7px solid #000000;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        width: 200px;
+        height: 40px;
+        padding: 6px 15px;
+        margin-bottom: 15px;
+
+        &:hover {
+            transform: scale(1.025);
+        }
+    }
+}
+
+.planned-appointments {
+    &__button-container {
+        display: flex;
+        justify-content: start;
+    }
+
+    &__delete-button-icon {
+        margin-right: 10px;
+    }
+
+    &__delete-button {
+        cursor: pointer;
+        margin-left: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        transition-duration: 0.2s;
+        font-size: 16px;
+        line-height: 20px;
+        border: 0.7px solid #000000;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        width: 200px;
+        height: 40px;
+        padding: 6px 15px;
+
+
+        &:hover {
+            transform: scale(1.025);
+        }
+    }
+
+    &__mark-completed-button-icon {
+        height: 20px;
+        width: 20px;
+        margin-right: 10px;
+    }
+
+    &__mark-completed-button {
         cursor: pointer;
         margin-left: 10px;
         margin-top: 5px;
@@ -181,4 +241,5 @@
     justify-content: center;
     align-items: center;
     font-size: 20px;
+    margin-bottom: 15px;
 }

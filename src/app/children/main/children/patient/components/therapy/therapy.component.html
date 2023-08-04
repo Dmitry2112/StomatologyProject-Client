@@ -24,7 +24,7 @@
                         [canEdit]="canEdit"
                     >
                     </appointment>
-                    <div class="completed-appointments__delete-button-container">
+                    <div class="completed-appointments__button-container">
                         <div
                             class="completed-appointments__delete-button"
                             (click)="deleteAppointment(completedAppointment.id)"
@@ -46,62 +46,6 @@
             <div class="noAppointmentInfo">Пройденных приемов нет</div>
         </ng-template>
 
-        <form
-            class="add-appointment-form"
-            [formGroup]="addAppointmentForm"
-            (ngSubmit)="onSubmit()"
-            *ngIf="showCompletedAppointmentsForm"
-        >
-            <div class="add-appointment-form__container">
-                <input
-                    class="add-appointment-form__data"
-                    type="number"
-                    formControlName="number"
-                >
-                <input
-                    class="add-appointment-form__data"
-                    type="text"
-                    formControlName="name"
-                >
-                <input
-                    class="add-appointment-form__data"
-                    type="date"
-                    formControlName="date"
-                >
-            </div>
-            <div class="add-appointment-form__action">
-                <button
-                    class="add-appointment-form__cancel-button"
-                    type="button"
-                    (click)="cancelCompletedAppointments()"
-                >
-                    Отмена
-                </button>
-
-                <button
-                    class="add-appointment-form__submit-button"
-                    type="submit"
-                >
-                    Сохранить
-                </button>
-            </div>
-        </form>
-
-        <div class="therapy__button-container">
-            <div
-                class="therapy__add-button"
-                (click)="addCompletedAppointments()"
-                *ngIf="canEdit"
-                [ngClass]="{'therapy__add-button_hide': showCompletedAppointmentsForm}"
-            >
-                <img
-                    class="therapy__icon"
-                    src="/assets/images/add-button.svg"
-                    alt="кнопка добавить">
-                <p class="therapy__name">Добавить этап</p>
-            </div>
-        </div>
-
         <hr style="height:3px; border:none; color:#A1A1A1; background-color:#A1A1A1;">
 
         <div class="appointment-title">
@@ -115,18 +59,30 @@
                         [canEdit]="canEdit"
                     >
                     </appointment>
-                    <div class="completed-appointments__delete-button-container">
+                    <div class="planned-appointments__button-container">
                         <div
-                            class="completed-appointments__delete-button"
+                            class="planned-appointments__delete-button"
                             (click)="deleteAppointment(plannedAppointment.id)"
                             *ngIf="canEdit"
                         >
                             <img
-                                class="completed-appointments__delete-button-icon"
+                                class="planned-appointments__delete-button-icon"
                                 src="assets/images/delete-button.svg"
                                 alt="удалить"
                             >
-                            <span class="completed-appointments__delete-button-text">Удалить этап</span>
+                            <span class="planned-appointments__delete-button-text">Удалить этап</span>
+                        </div>
+                        <div
+                            class="planned-appointments__mark-completed-button"
+                            (click)="markCompleted(plannedAppointment.id)"
+                            *ngIf="canEdit"
+                        >
+                            <img
+                                class="planned-appointments__mark-completed-button-icon"
+                                src="assets/images/mark-completed.svg"
+                                alt="отметить"
+                            >
+                            <span class="planned-appointments__mark-completed-button-text">Отметить пройденным</span>
                         </div>
                     </div>
                 </div>

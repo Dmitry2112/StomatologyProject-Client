@@ -8,6 +8,7 @@ import { ITherapy } from '../../data/interfaces/therapy.interface';
 import { AppointmentDataService } from '../../data/services/appointment-data.service';
 import { IAppointmentRequestModel } from '../../data/request-models/appointment.request-model.interface';
 import { TherapyDataService } from '../../data/services/therapy-data.service';
+import { IUpdateAppointmentRequestModel } from '../../data/request-models/update-appointment.request-model.interface';
 
 @Component({
     selector: 'therapy',
@@ -24,7 +25,6 @@ export class TherapyComponent implements OnInit {
     public completedAppointments: IAppointment[] = [];
     public plannedAppointments: IAppointment[] = [];
 
-    public showCompletedAppointmentsForm: boolean = false;
     public showPlannedAppointmentsForm: boolean = false;
 
     public addAppointmentForm: FormGroup = new FormGroup({
@@ -61,14 +61,6 @@ export class TherapyComponent implements OnInit {
             });
     }
 
-    public addCompletedAppointments(): void {
-        this.showCompletedAppointmentsForm = true;
-    }
-
-    public cancelCompletedAppointments(): void {
-        this.showCompletedAppointmentsForm = false;
-    }
-
     public addPlannedAppointments(): void {
         this.showPlannedAppointmentsForm = true;
     }
@@ -87,6 +79,15 @@ export class TherapyComponent implements OnInit {
             .subscribe(() => this._updateDataService.callMethodOfPageComponent());
     }
 
+    public markCompleted(id: number): void {
+        const updateAppointment: IUpdateAppointmentRequestModel = {
+            completed: true
+        };
+
+        this._appointmentDataService.updateAppointment(id, updateAppointment)
+            .subscribe(() => this._updateDataService.callMethodOfPageComponent());
+    }
+
     public onSubmit(): void {
         if (this.addAppointmentForm.invalid) {
             this.addAppointmentForm.markAllAsTouched();
@@ -94,12 +95,11 @@ export class TherapyComponent implements OnInit {
             return;
         }
 
-        this.showCompletedAppointmentsForm = false;
         this.showPlannedAppointmentsForm = false;
         const newAppointment: IAppointmentRequestModel = {
             name: this.addAppointmentForm.value.name,
             number: this.addAppointmentForm.value.number,
-            recommendations: '',
+            recommendations: 'Рекомендаций нет',
             date: this.addAppointmentForm.value.date,
             completed: false,
             therapyId : this.therapyData.id
