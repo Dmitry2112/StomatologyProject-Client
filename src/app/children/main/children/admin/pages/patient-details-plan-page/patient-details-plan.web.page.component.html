@@ -1,0 +1,63 @@
+<div class="plan">
+    <div class="plan__body">
+        <div class="plan__title">
+            Редактирование рекомендуемого плана лечения
+        </div>
+        <div
+            class="plan__content"
+            *ngFor="let therapy of therapyListModel.therapyList"
+        >
+            <therapy
+                [canEdit]="true"
+                [therapyData]="therapy"
+            ></therapy>
+        </div>
+
+        <form
+            class="add-therapy-form"
+            [formGroup]="addTherapyForm"
+            (ngSubmit)="onSubmit()"
+            *ngIf="showTherapyForm"
+        >
+            <div class="add-therapy-form__container">
+                <input
+                    class="add-therapy-form__data"
+                    type="text"
+                    formControlName="name"
+                    placeholder="Название лечения"
+                >
+            </div>
+            <div class="add-therapy-form__action">
+                <button
+                    class="add-therapy-form__cancel-button"
+                    type="button"
+                    (click)="cancelTherapy()"
+                >
+                    Отмена
+                </button>
+
+                <button
+                    class="add-therapy-form__submit-button"
+                    type="submit"
+                >
+                    Сохранить
+                </button>
+            </div>
+        </form>
+
+        <div class="therapy__button-container">
+            <div
+                class="therapy__add-button"
+                (click)="addTherapy()"
+                [ngClass]="{'therapy__add-button_hide': showTherapyForm}"
+            >
+                <img
+                    class="therapy__icon"
+                    src="/assets/images/add-button.svg"
+                    alt="кнопка добавить">
+                <p class="therapy__name">Добавить лечение</p>
+            </div>
+        </div>
+
+    </div>
+</div>

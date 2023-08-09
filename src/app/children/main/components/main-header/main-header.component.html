@@ -6,7 +6,7 @@
                 src="assets/images/header-user.svg"
                 alt="user"
             >
-            <p>{{userInfo}}</p>
+            <p class="header__user-name">{{ userInfo }}</p>
         </div>
         <img
             class="logo"
@@ -29,11 +29,12 @@
         >
             <img src="assets/images/burger-button.svg" alt="button">
         </button>
-        <div
-            class="header__logout-button"
-            (click)="logout()"
-        >
-            <img src="assets/images/logout.svg" alt="выход">
-        </div>
+    </div>
+
+    <div
+        class="header__logout-button"
+        (click)="logout()"
+    >
+        <img src="assets/images/logout.svg" alt="выход">
     </div>
 </header>

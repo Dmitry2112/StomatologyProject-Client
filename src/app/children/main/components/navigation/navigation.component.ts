@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
+import { OPEN_NAVIGATION_TOKEN } from '../../data/tokens/open-navigation.token';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
     selector: 'navigation',

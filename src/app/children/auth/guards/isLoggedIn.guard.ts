@@ -8,11 +8,11 @@ export const isLoggedInGuard: CanActivateFn = () => {
     const router: Router = inject(Router);
 
     if (authService.isAuthenticated()) {
-        if (router.url.includes('admin')) {
+        if (authService.isAdmin()) {
             return true;
         } else {
             const userId: number = Number(localStorage.getItem('userId'));
-            router.navigate([`/cabinet/${userId}/home`]);
+            router.navigate([`/cabinet/patient/${userId}/home`]);
         }
     }
 

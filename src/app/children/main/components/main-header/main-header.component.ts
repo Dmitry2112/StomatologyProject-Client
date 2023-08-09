@@ -1,6 +1,6 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { PatientDataService } from '../../data/services/patient-data.service';
-import { IPatientResponseModel } from '../../data/response-models/patient.response-model.interface';
+import { PatientDataService } from '../../children/patient/data/services/patient-data.service';
+import { IPatientResponseModel } from '../../children/patient/data/response-models/patient.response-model.interface';
 import { OPEN_NAVIGATION_TOKEN } from '../../data/tokens/open-navigation.token';
 import { BehaviorSubject } from 'rxjs';
 import { AuthService } from '../../../auth/data/services/auth.service';

@@ -74,9 +74,9 @@ export class LoginPageWebComponent implements OnInit, OnDestroy {
             .subscribe(
                 (data: IAuthUserResponseModel) => {
                     if (data.user.role === 'ADMIN') {
-                        this._router.navigate(['/admin']);
+                        this._router.navigate(['cabinet/admin']);
                     } else {
-                        this._router.navigate([`/cabinet/${data.user.id}/home`]);
+                        this._router.navigate([`/cabinet/patient/${data.user.id}/home`]);
                     }
                 }
             );

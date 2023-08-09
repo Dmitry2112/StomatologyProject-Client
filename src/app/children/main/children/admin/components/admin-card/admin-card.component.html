@@ -1,0 +1,43 @@
+<div class="admin-card" *ngIf="adminCardData">
+    <div class="admin-card__body">
+        <div class="admin-card__content">
+            <div class="admin-card__admin-photo" *ngIf="adminCardData.photo; else defaultPhoto">
+                <img src="assets/images/{{ adminCardData.photo }}" alt="фото админа">
+            </div>
+            <ng-template #defaultPhoto>
+                <div class="admin-card__admin-photo" >
+                    <img src="assets/images/default-user-img.svg" alt="фото админа">
+                </div>
+            </ng-template>
+
+            <div class="admin-card__admin-data">
+                <ng-container *ngFor="let field of adminCardData.adminCardFields">
+                    <label
+                        class="admin-card__label" for="field"
+                        *ngIf="field.label; else notSetLabel"
+                    >
+                        {{ field.label }}
+                    </label>
+                    <div
+                        class="admin-card__data"
+                        id="field"
+                        *ngIf="field.data; else notSetData"
+                    >
+                        {{ field.data }}
+                    </div>
+                </ng-container>
+                <ng-template #notSetLabel>
+                    <div class="admin-card__label_not-set" >
+                        Не задано
+                    </div>
+                </ng-template>
+                <ng-template #notSetData>
+                    <div class="admin-card__data_not-set" >
+                        Не задано
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
+

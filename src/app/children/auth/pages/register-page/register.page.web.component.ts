@@ -67,32 +67,15 @@ export class RegisterPageWebComponent implements OnDestroy {
 
             return;
         }
-        let user: IAuthUserRegisterRequestModel;
-        const role: string = this.registerForm.controls.role.value;
-        if (role === 'ADMIN') {
-            user = {
-                lastName: this.registerForm.controls.lastName.value,
-                firstName: this.registerForm.controls.firstName.value,
-                patronymic: this.registerForm.controls.patronymic.value,
-                birthDate: this.registerForm.controls.birthDate.value,
-                email: this.registerForm.controls.email.value,
-                password: this.registerForm.controls.password.value,
-                role: this.registerForm.controls.role.value
-            };
-        } else {
-            user = {
-                lastName: this.registerForm.controls.lastName.value,
-                firstName: this.registerForm.controls.firstName.value,
-                patronymic: this.registerForm.controls.patronymic.value,
-                birthDate: this.registerForm.controls.birthDate.value,
-                email: this.registerForm.controls.email.value,
-                password: this.registerForm.controls.password.value,
-                role: this.registerForm.controls.role.value,
-                therapyList: [],
-                photoDocuments: [],
-                photo: ''
-            };
-        }
+        const user: IAuthUserRegisterRequestModel = {
+            lastName: this.registerForm.controls.lastName.value,
+            firstName: this.registerForm.controls.firstName.value,
+            patronymic: this.registerForm.controls.patronymic.value,
+            birthDate: this.registerForm.controls.birthDate.value,
+            email: this.registerForm.controls.email.value,
+            password: this.registerForm.controls.password.value,
+            role: this.registerForm.controls.role.value
+        };
 
         this.registerForm.disable();
         this._registerSubscription = this._auth

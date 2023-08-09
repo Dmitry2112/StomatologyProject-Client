@@ -1,0 +1,195 @@
+<div class="appointment-info" *ngIf="appointmentData">
+    <div
+        class="appointment-info__table"
+        [ngClass]="{ 'completed-appointment': appointmentData.completed }"
+    >
+        <div class="appointment-info__name-label">Наименование этапа лечения</div>
+        <div class="appointment-info__name-data">
+            {{ appointmentData.number }}. {{ appointmentData.name }}
+        </div>
+
+        <div class="appointment-info__date-label">Дата приёма</div>
+        <div class="appointment-info__date-data">{{ appointmentData.date }}</div>
+
+        <div class="appointment-info__services-label">Услуга</div>
+        <div class="appointment-info__services-label">Цена за шт. </div>
+        <div class="appointment-info__services-label">Кол-во</div>
+        <div class="appointment-info__services-label">Стоимость</div>
+        <div class="appointment-info__services-label">Профиль врача</div>
+
+        <ng-container *ngFor="let service of appointmentData.services">
+            <div class="appointment-info__services-data">
+                <span>{{ service.name }}</span>
+                <div
+                    class="appointment-info__delete-button"
+                    (click)="delete(service.id)"
+                    *ngIf="canEdit && !appointmentData.completed"
+                >
+                    <img src="assets/images/delete-button.svg" alt="удалить">
+                </div>
+            </div>
+            <div class="appointment-info__services-data">{{ service.price }}</div>
+            <div class="appointment-info__services-data">{{ service.count }}</div>
+            <div class="appointment-info__services-data">{{ service.price * service.count }}</div>
+            <div class="appointment-info__services-data">
+                <div class="doctor">{{ service.doctorSpecialization }}</div>
+            </div>
+        </ng-container>
+    </div>
+
+    <form
+        class="service-add-form"
+        [formGroup]="serviceAddForm"
+        (ngSubmit)="onSubmit()"
+        *ngIf="showForm"
+    >
+        <div class="service-add-form__container">
+            <input
+                class="service-add-form__data"
+                type="text"
+                formControlName="name"
+                placeholder="Название услуги"
+            >
+            <input
+                class="service-add-form__data"
+                type="number"
+                formControlName="price"
+                placeholder="Цена за шт."
+            >
+            <input
+                class="service-add-form__data"
+                type="number"
+                formControlName="count"
+                placeholder="Количество"
+            >
+            <input
+                class="service-add-form__data"
+                type="text"
+                formControlName="doctorSpecialization"
+                placeholder="Профиль врача"
+            >
+        </div>
+        <div class="service-add-form__action">
+            <button
+                class="service-add-form__cancel-button"
+                type="button"
+                (click)="cancel()"
+            >
+                Отмена
+            </button>
+
+            <button
+                class="service-add-form__submit-button"
+                type="submit"
+            >
+                Сохранить
+            </button>
+        </div>
+
+        <div
+            class="service-add-form__error-text"
+            *ngIf="serviceAddForm.invalid && serviceAddForm.touched"
+        >
+            Пожалуйста, заполните все поля формы корректными данными
+        </div>
+        <div
+            class="service-add-form__good-text"
+            *ngIf="serviceAddForm.valid && serviceAddForm.touched"
+        >
+            Ваша форма корректно заполнена!
+        </div>
+
+    </form>
+
+    <div class="appointment-info__button-container">
+        <div
+            class="appointment-info__add-button"
+            (click)="add()"
+            *ngIf="canEdit && !appointmentData.completed"
+            [ngClass]="{'appointment-info__add-button_hide': showForm}"
+        >
+            <img
+                class="appointment-info__icon"
+                src="/assets/images/add-button.svg"
+                alt="кнопка добавить">
+            <p class="appointment-info__name">Добавить услугу</p>
+        </div>
+    </div>
+
+    <div
+        class="appointment-sum"
+        [ngClass]="{ 'completed-appointment': appointmentData.completed }"
+    >
+        <div class="appointment-sum__text">
+            Сумма за весь приём:
+        </div>
+        <div class="appointment-sum__number">
+            {{ sumCostForAppointment }}
+        </div>
+    </div>
+
+    <div
+        class="appointment-recommendations"
+        *ngIf="appointmentData.recommendations"
+        (click)="open()"
+    >
+
+        <div class="appointment-recommendations__container-for-edit">
+            <span class="appointment-recommendations__title">Рекомендации</span>
+            <div
+                class="appointment-recommendations__edit-button"
+                (click)="editRecommendations()"
+                *ngIf="canEdit"
+                [ngClass]="{'appointment-recommendations__edit-button_hide': showRecommendationsForm}"
+            >
+                <img src="assets/images/edit-button.svg" alt="редактировать">
+            </div>
+        </div>
+
+        <img
+            src="/assets/images/arrow-down-sign-to-navigate.svg"
+            class="appointment-recommendations__chevron"
+            [ngClass]="{'appointment-recommendations__chevron_open': (isOpen$ | async)}"
+        >
+        <div
+            class="appointment-recommendations__container"
+            [ngClass]="{'appointment-recommendations__container_open': (isOpen$ | async)}"
+        >
+            <div class="appointment-recommendations__text">
+                {{ appointmentData.recommendations }}
+            </div>
+        </div>
+    </div>
+
+    <form
+        class="update-recommendations-form"
+        [formGroup]="updateRecommendationsForm"
+        (ngSubmit)="onSubmitRecommendations()"
+        *ngIf="showRecommendationsForm"
+    >
+        <div class="update-recommendations-form__container">
+            <input
+                class="update-recommendations-form__data"
+                type="text"
+                formControlName="textRecommendations"
+            >
+        </div>
+        <div class="update-recommendations-form__action">
+            <button
+                class="update-recommendations-form__cancel-button"
+                type="button"
+                (click)="cancelRecommendations()"
+            >
+                Отмена
+            </button>
+
+            <button
+                class="update-recommendations-form__submit-button"
+                type="submit"
+            >
+                Сохранить
+            </button>
+        </div>
+    </form>
+
+</div>

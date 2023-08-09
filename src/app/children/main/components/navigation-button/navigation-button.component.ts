@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { OPEN_NAVIGATION_TOKEN } from '../../data/tokens/open-navigation.token';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
     selector: 'navigation-button',
@@ -20,7 +22,14 @@ export class NavigationButtonComponent implements OnInit {
 
     public routLink!: string;
 
+    constructor(@Inject(OPEN_NAVIGATION_TOKEN) public openNavigation$: BehaviorSubject<boolean>) {
+    }
+
     public ngOnInit(): void {
         this.routLink = `${this.id}/${this.pageRout}`;
+    }
+
+    public closeNavigation(): void {
+        this.openNavigation$.next(false);
     }
 }
